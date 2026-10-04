@@ -1,0 +1,51 @@
+Row ID,Order ID,Order Date,Ship Date,Ship Mode,Customer Name,Segment,Region,Category,Sub-Category,Product Name,Sales,Quantity,Discount,Profit
+1,CA-2021-152156,11/8/2021,11/11/2021,Second Class,Claire Gute,Consumer,South,Furniture,Bookcases,Bush Somerset Collection Bookcase,261.96,2,0,41.9136
+2,CA-2021-152156,11/8/2021,11/11/2021,Second Class,Claire Gute,Consumer,South,Furniture,Chairs,Hon Deluxe Fabric Upholstered Stacking Chairs,731.94,3,0,219.582
+3,CA-2021-138688,6/12/2021,6/16/2021,Second Class,Darrin Van Huff,Corporate,West,Office Supplies,Labels,Self-Adhesive Address Labels,14.62,2,0,6.8714
+4,US-2020-108966,10/11/2020,10/18/2020,Standard Class,Sean O'Donnell,Consumer,South,Furniture,Tables,Bretford CR4500 Series Slim Rectangular Table,957.5775,5,0.45,-383.031
+5,US-2020-108966,10/11/2020,10/18/2020,Standard Class,Sean O'Donnell,Consumer,South,Office Supplies,Storage,Eldon Fold N Roll Cart System,22.368,2,0.2,2.5164
+6,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Furniture,Furnishings,Eldon Expressions Wood Desk Accessories,48.86,7,0,14.1694
+7,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Office Supplies,Art,Newell 322,7.28,4,0,1.9656
+8,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Technology,Phones,Mitel 5320 IP Phone VoIP phone,907.152,6,0.2,90.7152
+9,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Office Supplies,Binders,DXL Angle-View Binders with Locking Rings,18.504,3,0.2,5.7825
+10,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Office Supplies,Appliances,Belkin F5C206VTEL 6 Outlet,114.9,5,0,34.47
+11,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Furniture,Tables,Chromcraft Rectangular Conference Tables,1706.184,9,0.2,85.3092
+12,CA-2021-115812,6/9/2021,6/14/2021,Standard Class,Brosina Hoffman,Consumer,West,Technology,Phones,Konftel 250 Conference phone,911.424,4,0.2,68.3568
+13,CA-2022-161389,12/9/2022,12/13/2022,Second Class,Andrew Allen,Consumer,South,Office Supplies,Paper,Xerox 1967,15.552,3,0.2,5.4432
+14,CA-2022-135545,11/27/2022,11/29/2022,Second Class,Irene Maddox,Consumer,West,Office Supplies,Binders,Fellowes PB200 Plastic Comb Binding Machine,407.976,3,0.2,132.5922
+15,US-2021-156909,11/5/2021,11/10/2021,Standard Class,Harold Pawlan,Home Office,Central,Office Supplies,Appliances,Holmes HEPA Air Purifier,68.81,5,0.8,-123.858
+16,US-2021-156909,11/5/2021,11/10/2021,Standard Class,Harold Pawlan,Home Office,Central,Office Supplies,Binders,Storex DuraTech Ranges,2.544,3,0.8,-3.816
+17,CA-2022-105893,11/11/2022,11/18/2022,Standard Class,Pete Kriz,Consumer,Central,Office Supplies,Storage,Storex Durable Binders,665.88,6,0.4,-13.3176
+18,CA-2022-167164,5/13/2022,5/15/2022,Second Class,Alejandro Grove,Consumer,West,Office Supplies,Storage,Fellowes Super Stor/Drawer,55.5,2,0,9.99
+19,CA-2022-143336,8/27/2022,9/1/2022,Second Class,Zuschuss Donatelli,Consumer,West,Office Supplies,Paper,Xerox 4200 Series MultiUse Premium,8.56,2,0,2.4824
+20,CA-2022-143336,8/27/2022,9/1/2022,Second Class,Zuschuss Donatelli,Consumer,West,Technology,Phones,Cisco SPA 501G IP Phone,213.48,3,0.2,16.0110
+21,CA-2023-167199,10/3/2023,10/7/2023,Second Class,Ken Black,Consumer,South,Office Supplies,Binders,W.H. Snyder Binder,22.72,4,0,7.384
+22,CA-2023-149677,1/28/2023,2/5/2023,Standard Class,Maria Etezadi,Consumer,West,Technology,Phones,Apple iPhone 14,1999.98,2,0,399.996
+23,CA-2023-149677,1/28/2023,2/5/2023,Standard Class,Maria Etezadi,Consumer,West,Technology,Accessories,Logitech MX Master 3,249.99,3,0,87.4965
+24,CA-2023-111682,11/19/2023,11/23/2023,Standard Class,Eric Hoffmann,Consumer,East,Technology,Machines,Canon imageCLASS MF8580Cdw,2799.982,2,0,979.9937
+25,CA-2023-111682,11/19/2023,11/23/2023,Standard Class,Eric Hoffmann,Consumer,East,Office Supplies,Paper,Xerox Premium Multipurpose,45.98,5,0,18.392
+26,CA-2023-134915,8/3/2023,8/7/2023,Standard Class,Lena Hernandez,Corporate,West,Furniture,Chairs,HON 5400 Series Task Chairs,731.94,3,0,219.582
+27,CA-2023-134915,8/3/2023,8/7/2023,Standard Class,Lena Hernandez,Corporate,West,Technology,Accessories,Plantronics CS510,299.97,3,0.2,74.9925
+28,US-2023-168116,5/22/2023,5/24/2023,First Class,Ted Butterfield,Corporate,West,Technology,Accessories,Belkin 36 Outlet Metal Power Strip,269.94,3,0,134.97
+29,CA-2022-119914,12/2/2022,12/6/2022,Standard Class,Dorothy Badders,Consumer,East,Technology,Phones,Samsung Galaxy S22,999.99,1,0,199.998
+30,CA-2022-119914,12/2/2022,12/6/2022,Standard Class,Dorothy Badders,Consumer,East,Furniture,Furnishings,Sauder Pineland L-Shaped Desk,1299.99,1,0.1,129.999
+31,CA-2021-109806,11/24/2021,11/28/2021,Standard Class,Nora Price,Consumer,Central,Office Supplies,Storage,Avery Heavy Gauge Vinyl,32.4,4,0.2,8.1
+32,CA-2021-109806,11/24/2021,11/28/2021,Standard Class,Nora Price,Consumer,Central,Furniture,Bookcases,Sauder Classic Bookcase,494.99,2,0,99.0
+33,CA-2022-116904,3/17/2022,3/18/2022,First Class,Daniel Byrd,Consumer,East,Technology,Machines,HP LaserJet Pro M402dn,699.99,1,0,209.997
+34,CA-2022-116904,3/17/2022,3/18/2022,First Class,Daniel Byrd,Consumer,East,Office Supplies,Art,Sanford Peel-Off Colored Pencils,15.99,3,0,6.396
+35,CA-2023-169248,9/11/2023,9/15/2023,Second Class,Catherine Klein,Corporate,South,Technology,Phones,Motorola Edge 30,549.99,2,0,109.998
+36,CA-2023-169248,9/11/2023,9/15/2023,Second Class,Catherine Klein,Corporate,South,Office Supplies,Envelopes,Poly String & Button Envelopes,3.264,2,0.2,0.816
+37,CA-2021-100153,10/29/2021,11/2/2021,Standard Class,Greg Tran,Consumer,West,Technology,Accessories,Logitech Wireless Mouse,29.99,4,0,11.996
+38,CA-2021-100153,10/29/2021,11/2/2021,Standard Class,Greg Tran,Consumer,West,Office Supplies,Binders,GBC DocuBind TL300 Electric Binding,731.94,3,0.2,219.582
+39,CA-2022-127180,12/8/2022,12/12/2022,Standard Class,Robin Brennan,Consumer,Central,Furniture,Tables,Bevis 36 x 72 Conference Tables,419.952,4,0.2,41.9952
+40,CA-2022-127180,12/8/2022,12/12/2022,Standard Class,Robin Brennan,Consumer,Central,Technology,Accessories,Plantronics Savi W720 Multi-Device,539.97,3,0,161.991
+41,CA-2023-143567,7/14/2023,7/18/2023,Second Class,Laura Armstrong,Consumer,East,Technology,Phones,OnePlus 11,699.99,2,0,139.998
+42,CA-2023-143567,7/14/2023,7/18/2023,Second Class,Laura Armstrong,Consumer,East,Office Supplies,Paper,HP Office20 lb Paper,35.52,4,0.2,9.94
+43,US-2021-157773,3/2/2021,3/7/2021,Standard Class,Adam Hart,Consumer,South,Furniture,Furnishings,Eldon Jumbo ProFile Portable Binder,22.72,4,0,7.384
+44,CA-2022-140151,3/14/2022,3/19/2022,Standard Class,Nicole Brennan,Corporate,East,Technology,Machines,Zebra GX430t Thermal Label Printer,1299.99,1,0,389.997
+45,CA-2022-140151,3/14/2022,3/19/2022,Standard Class,Nicole Brennan,Corporate,East,Office Supplies,Storage,Eldon Fold N Roll,22.368,3,0,6.7104
+46,CA-2023-118255,10/8/2023,10/13/2023,Standard Class,Henry MacAllister,Home Office,Central,Technology,Accessories,Kensington SmartFit,29.99,2,0,11.996
+47,CA-2023-118255,10/8/2023,10/13/2023,Standard Class,Henry MacAllister,Home Office,Central,Office Supplies,Supplies,Dixon Prang Watercolor Pens,1.99,3,0.2,0.5970
+48,CA-2021-149038,6/7/2021,6/8/2021,First Class,Lena Cacioppo,Corporate,West,Technology,Phones,Cisco IP Phone 7960G,874.99,1,0,262.497
+49,CA-2021-149038,6/7/2021,6/8/2021,First Class,Lena Cacioppo,Corporate,West,Office Supplies,Paper,Avery 5 Tab Dividers,6.48,3,0.2,1.944
+50,US-2022-113959,11/10/2022,11/15/2022,Standard Class,Joel Eaton,Consumer,South,Technology,Machines,Fellowes Powershred 99Ci,399.99,1,0,119.997
