@@ -1,125 +1,38 @@
-# 📊 Excel Sales Analysis Guide
+# 📗 Excel Analysis Guide — Sales Performance & Business Analytics Dashboard
 
-## Step 1: Import Data
-
-1. Open Excel → **Data tab** → **Get Data** → **From Text/CSV**
-2. Select `datasets/sample_data.csv` (or full Superstore CSV)
-3. Click **Transform Data** to open Power Query Editor
-4. Set correct data types:
-   - `Order Date`, `Ship Date` → Date
-   - `Sales`, `Discount`, `Profit` → Decimal Number
-   - `Quantity` → Whole Number
-5. Click **Close & Load**
+**Author:** Ishita Prasad  
+**Project:** Sales Performance & Business Analytics Dashboard
 
 ---
 
-## Step 2: Create Pivot Tables
+## 📌 Executive Data Analysis Workflow
 
-### 📌 Pivot Table 1 — Monthly Sales
-| Setting | Value |
-|---------|-------|
-| Rows | Order Date (grouped by Month & Year) |
-| Values | Sum of Sales, Sum of Profit |
-| Filter | Region, Category |
+### 1. Data Cleaning & Power Query Setup
+- Import `datasets/sample_data.csv` via Excel Power Query (`Data` → `Get Data` → `From Text/CSV`).
+- Transform Data Types:
+  - `Order Date`, `Ship Date` → `Date`
+  - `Sales`, `Profit`, `Discount` → `Currency / Decimal`
+  - `Quantity` → `Whole Number`
+- Remove duplicates and null values.
 
-**Steps:**
-1. Click inside your data → Insert → PivotTable
-2. Drag `Order Date` to Rows → Right-click → Group → Months + Years
-3. Drag `Sales` and `Profit` to Values
-4. Insert a **Line Chart** from the pivot table
+### 2. Core Pivot Table Specifications
 
----
+| Pivot Table | Rows | Values | Primary Visualization |
+|:---|:---|:---|:---|
+| **Monthly Revenue Trend** | `Order Date` (Month & Year) | `Sum of Sales`, `Sum of Profit` | Area / Line Chart with YoY comparisons |
+| **Regional Sales Breakdown** | `Region` | `Sum of Sales`, `Sum of Profit` | Grouped Bar Chart |
+| **Top 10 Revenue Products** | `Product Name` (Top 10 Filter) | `Sum of Sales` | Horizontal Bar Chart |
+| **Category Distribution** | `Category`, `Sub-Category` | `Sum of Sales`, `Profit Margin %` | Donut Chart |
 
-### 📌 Pivot Table 2 — Region-wise Sales
-| Setting | Value |
-|---------|-------|
-| Rows | Region |
-| Columns | Category |
-| Values | Sum of Sales |
-
-**Visualization:** Clustered Bar Chart
-
----
-
-### 📌 Pivot Table 3 — Top 10 Products
-```
-1. Rows: Product Name
-2. Values: Sum of Sales
-3. Sort: Descending by Sales
-4. Right-click Row Labels → Filter → Top 10
-```
-**Visualization:** Horizontal Bar Chart
-
----
-
-### 📌 Pivot Table 4 — Category Performance
-| Setting | Value |
-|---------|-------|
-| Rows | Category, Sub-Category |
-| Values | Sum of Sales, Sum of Profit, Count of Order ID |
-
----
-
-## Step 3: Key Excel Formulas
+### 3. Key Excel Measures & Formulas
 
 ```excel
-// Profit Margin %
-=Profit/Sales
+// Profit Margin Percentage
+=SUM([Profit]) / SUM([Sales])
 
-// Total Sales KPI
-=SUM(Table1[Sales])
+// Average Order Value (AOV)
+=AVERAGE([Sales])
 
-// YoY Growth
-=(ThisYear - LastYear) / LastYear
-
-// VLOOKUP for Category
-=VLOOKUP([@[Sub-Category]], CategoryTable, 2, FALSE)
-
-// Dynamic Top N filter
-=LARGE(SalesRange, ROW(A1))
+// Year-over-Year (YoY) Sales Growth
+=(SUM(Sales_2023) - SUM(Sales_2022)) / SUM(Sales_2022)
 ```
-
----
-
-## Step 4: Dashboard Layout
-
-```
-+------------------+------------------+------------------+
-|  💰 Total Sales  |  📦 Total Orders |  💹 Profit Margin|
-|    $2,297,201    |      9,994       |     12.47%       |
-+------------------+------------------+------------------+
-|                                                        |
-|        📈 Monthly Sales Trend (Line Chart)             |
-|                                                        |
-+------------------------+---------------------------------+
-|  🗺️ Region Sales       |  🏆 Top 10 Products            |
-|  (Pie/Donut Chart)     |  (Horizontal Bar Chart)        |
-+------------------------+---------------------------------+
-|                                                        |
-|        📦 Category Performance (Clustered Bar)         |
-|                                                        |
-+--------------------------------------------------------+
-```
-
----
-
-## Step 5: Add Slicers
-
-1. Click PivotTable → PivotTable Analyze → **Insert Slicer**
-2. Add slicers for: **Region**, **Category**, **Segment**, **Year**
-3. Connect slicers to all pivot tables:
-   - Right-click slicer → **Report Connections**
-   - Check all pivot tables
-
----
-
-## ✅ Final Checklist
-- [ ] Data imported and cleaned
-- [ ] 4 Pivot Tables created
-- [ ] Monthly Sales line chart
-- [ ] Region-wise bar chart
-- [ ] Top 10 products chart
-- [ ] Category performance chart
-- [ ] KPI cards added
-- [ ] Slicers connected to all pivots
-- [ ] Dashboard tab formatted and polished

@@ -1,54 +1,77 @@
 # 📊 Sales Performance & Business Analytics Dashboard
 
-> **End-to-End Retail Data Analytics & Business Intelligence Dashboard**
+<p align="center">
+  <img src="assets/preview-banner.svg" alt="Project Banner" width="100%"/>
+</p>
+
+<p align="center">
+  <strong>An Executive Retail Analytics & Data Science Solution</strong><br/>
+  Created by <strong>Ishita Prasad</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL"/>
+  <img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel"/>
+  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI"/>
+  <img src="https://img.shields.io/badge/DAX-EC4899?style=for-the-badge&logo=analytics&logoColor=white" alt="DAX"/>
+</p>
 
 ---
 
-## 📌 Project Overview
+## 📸 Executive Dashboard Preview
 
-The **Sales Performance & Business Analytics Dashboard** provides an executive-level analysis of retail sales performance across multiple regions, categories, and customer segments. Built by **Ishita Prasad**, this project integrates data extraction, cleaning, DAX measures, dynamic slicers, and interactive visualization using **Python, Pandas, SQL, Excel, Power Query, Power BI**, and **Web Analytics (HTML5/Chart.js)**.
-
----
-
-## 🎯 Key Capabilities & Highlights
-
-- **Data Wrangling & Analysis:** Cleaned and analyzed retail sales data using **Python, Pandas, SQL, Excel**, and **Power Query** to identify revenue, profit, product, and regional trends.
-- **DAX-Based KPI Modeling:** Built interactive Power BI & Web dashboards with **DAX-based KPIs** for revenue, profit, sales growth, profit margins, and average order value to support strategic business decisions.
-- **Interactive Slicers & Scenario Modeling:** Features real-time multi-dimensional filtering across Region, Product Category, and Order Year.
+<p align="center">
+  <img src="assets/dashboard_preview.png" alt="Sales Performance & Business Analytics Dashboard Preview" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"/>
+</p>
 
 ---
 
-## 🛠️ Skills & Technologies Demonstrated
+## 📌 Executive Summary
 
-| Category | Skills & Tools |
-|----------|---------------|
-| **Programming & Data Science** | Python, Pandas, Data Cleaning, Exploratory Data Analysis (EDA) |
-| **Databases & Querying** | SQL, Power Query (M Language), Data Transformation |
-| **Spreadsheets & Modeling** | Microsoft Excel, Pivot Tables, XLOOKUP, Dynamic Named Ranges |
-| **Business Intelligence** | Power BI, DAX Measures, KPI Cards, Row-Level Security |
-| **Interactive Visualization** | Chart.js, HTML5 Glassmorphism UI, Responsive Web Analytics |
+The **Sales Performance & Business Analytics Dashboard** is an end-to-end data analytics and business intelligence application developed by **Ishita Prasad**. The project extracts actionable business intelligence from retail transaction datasets (Superstore & Kaggle sales data) by combining data engineering in **Python & SQL**, modeling with **DAX & Power Query**, and delivering interactive web analytics through a modern **Dark Glassmorphism Dashboard**.
 
 ---
 
-## 📊 Key Dashboard Features & Metrics
+## 🎯 Key Project Highlights & Capabilities
 
-### 📈 Executive KPI Metrics
-- 💰 **Total Sales Revenue** — Overall top-line metric ($2.30M benchmark)
-- 📈 **Net Profit** — Overall net earnings ($286.4K benchmark)
-- 📦 **Order Count** — Volume of transactions (9,994 orders)
-- 💹 **Profit Margin %** — Efficiency ratio (12.47%)
-- 🛒 **Average Order Value (AOV)** — Mean spend per transaction ($230)
+- **Data Engineering & Cleaning:** Cleaned and analyzed retail sales data using **Python, Pandas, SQL, Excel**, and **Power Query** to identify revenue, profit, product, and regional trends.
+- **DAX-Based KPI Modeling:** Built an interactive Power BI & Web dashboard with **DAX-based KPIs** for revenue, profit, sales growth, and average order value to support executive business analysis.
+- **Interactive Scenario Slicers:** Features dynamic real-time filtering across Region, Category, and Order Year that updates KPI calculations and visualizations instantly.
 
-### 📅 Time-Series & Seasonal Trends
-- Month-over-Month (MoM) & Year-over-Year (YoY) revenue comparison (2022 vs 2023)
-- Seasonal Q4 holiday sales peak identification
+---
 
-### 🗺️ Geographic & Category Breakdown
-- Region-wise performance across West, East, Central, and South
-- Category contribution (Technology, Furniture, Office Supplies)
+## 🛠️ Data Analytics Stack & Core Competencies
 
-### 🏆 Top Revenue Products
-- Ranked ranking of top 10 products by sales revenue
+| Competency Layer | Tools & Technologies | Key Applications |
+| :--- | :--- | :--- |
+| **Data Cleaning & Wrangling** | **Python, Pandas, SQL** | Missing value imputation, data normalization, transaction aggregations |
+| **ETL & Data Pipeline** | **Power Query (M Language)** | Data type transformation, custom date tables, automated schema cleanup |
+| **Business Logic & Modeling** | **Microsoft Excel, Power BI, DAX** | Calculated measures, Time Intelligence, YoY sales growth, profit margin % |
+| **Interactive Visualization** | **HTML5, CSS3, Chart.js** | Dark Glassmorphism UI, real-time dynamic filter slicers, responsive charts |
+
+---
+
+## 📈 Executive Key Performance Indicators (KPIs)
+
+| Metric | Formula / Logic | Business Value | Benchmark Value |
+| :--- | :--- | :--- | :---: |
+| **Total Revenue** | `SUM(Sales[Sales])` | Overall top-line sales volume | **$2.30M** |
+| **Net Profit** | `SUM(Sales[Profit])` | Bottom-line earnings across regions | **$286.4K** |
+| **Order Volume** | `DISTINCTCOUNT(Sales[Order ID])` | Transaction volume count | **9,994** |
+| **Profit Margin %** | `DIVIDE(Total Profit, Total Revenue)` | Profitability efficiency ratio | **12.47%** |
+| **Avg Order Value (AOV)** | `DIVIDE(Total Revenue, Order Volume)` | Mean revenue per order | **$230** |
+
+---
+
+## 🎛️ Interactive Web Dashboard Features
+
+- **🌐 Real-Time Interactive Filter Bar:** Filter analytics by **Region** (*West, East, Central, South*), **Product Category** (*Technology, Furniture, Office Supplies*), and **Year** (*2022, 2023*).
+- **📈 Monthly Revenue Trend:** Line chart with gradient fills comparing 2022 vs 2023 MoM revenue trajectory.
+- **🗂️ Category Distribution:** Doughnut chart breaking down sales contribution across product categories.
+- **🗺️ Regional Performance:** Grouped bar charts comparing Sales Revenue vs Net Profit by region.
+- **🏆 Top 10 Products:** Horizontal bar chart highlighting top revenue-generating items.
 
 ---
 
@@ -56,25 +79,26 @@ The **Sales Performance & Business Analytics Dashboard** provides an executive-l
 
 ```
 sales-performance-dashboard/
-├── 📄 README.md                ← Project documentation & overview
+├── 📄 README.md                ← Executive project overview & documentation
 ├── 📁 docs/
 │   └── index.html              ← Interactive Glassmorphism Web Dashboard
+├── 📁 assets/
+│   ├── dashboard_preview.png   ← High-resolution dashboard screenshot
+│   └── preview-banner.svg     ← Project SVG banner graphic
 ├── 📁 datasets/
-│   ├── README.md               ← Dataset details & download links
-│   └── sample_data.csv         ← Sample retail sales dataset
+│   └── sample_data.csv         ← Retail sales dataset
 ├── 📁 excel/
-│   └── sales_analysis.md       ← Excel Pivot Tables & Formulas guide
+│   └── sales_analysis.md       ← Excel Pivot Tables & Data Analysis guide
 ├── 📁 powerbi/
 │   ├── dashboard_guide.md      ← Power BI setup & DAX reference
-│   └── dax_formulas.md         ← Key DAX measure definitions
-├── 📁 tableau/
-│   └── tableau_guide.md        ← Tableau dashboard & story points guide
-└── 📄 vercel.json              ← Deployment configuration
+│   └── dax_formulas.md         ← Core DAX formulas reference
+└── 📁 tableau/
+    └── tableau_guide.md        ← Tableau calculations & worksheets guide
 ```
 
 ---
 
-## 🚀 Running the Project Locally
+## 🚀 How to Run the Project Locally
 
 1. **Clone the repository:**
    ```bash
@@ -82,7 +106,7 @@ sales-performance-dashboard/
    ```
 
 2. **Launch the web dashboard:**
-   You can serve `docs/index.html` using any local HTTP server:
+   You can serve `docs/index.html` using any local server:
    ```bash
    npx serve docs
    ```
@@ -93,11 +117,5 @@ sales-performance-dashboard/
 ## 👤 Author & Attribution
 
 **Ishita Prasad**
-- 🌐 GitHub: [@ishitapd](https://github.com/ishitapd)
+- 🌐 GitHub Profile: [@ishitapd](https://github.com/ishitapd)
 - 💼 Role: Data & Business Analyst
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
