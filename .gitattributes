@@ -1,0 +1,28 @@
+# ============================================================
+# .gitattributes — Language detection for GitHub Linguist
+# ============================================================
+
+# Mark documentation files as non-code (excluded from language stats)
+*.md linguist-documentation=true
+
+# Explicitly include these languages so GitHub shows the correct breakdown
+*.py linguist-language=Python
+*.sql linguist-language=SQL
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.json linguist-language=JSON
+*.svg linguist-vendored=false
+
+# Mark assets and generated images as vendored (excluded from language stats)
+assets/* linguist-vendored=true
+datasets/* linguist-documentation=true
+
+# Normalize line endings
+* text=auto
+*.py text eol=lf
+*.sql text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.md text eol=lf

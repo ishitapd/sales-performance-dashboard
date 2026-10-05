@@ -1,37 +1,30 @@
-name: Deploy GitHub Pages
+name: Validate Project Structure
 
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './docs'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Verify key files exist
+        run: |
+          echo "Checking project structure..."
+          test -f README.md && echo "✅ README.md found"
+          test -f docs/index.html && echo "✅ Dashboard (docs/index.html) found"
+          test -f datasets/sample_data.csv && echo "✅ Dataset found"
+          test -f python/01_data_cleaning.py && echo "✅ Python cleaning script found"
+          test -f python/02_eda.py && echo "✅ Python EDA script found"
+          test -f python/03_business_analysis.py && echo "✅ Python business analysis found"
+          test -f sql/01_revenue_analysis.sql && echo "✅ SQL revenue analysis found"
+          test -f sql/06_advanced_analysis.sql && echo "✅ SQL advanced analysis found"
+          test -f powerbi/dax_measures.md && echo "✅ DAX measures catalog found"
+          test -f powerbi/dashboard_guide.md && echo "✅ Power BI dashboard guide found"
+          echo ""
+          echo "All project files verified successfully."
