@@ -75,7 +75,7 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .action-btn {
@@ -99,6 +99,13 @@
             transform: translateY(-1px);
         }
 
+        .currency-toggle {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+        }
+
         .action-btn-primary {
             background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: #fff;
@@ -106,15 +113,10 @@
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
         }
 
-        .action-btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-            transform: translateY(-2px);
-        }
-
         .author-badge {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: rgba(30, 41, 59, 0.7);
             padding: 6px 14px;
             border-radius: 9999px;
@@ -256,10 +258,6 @@
             cursor: pointer;
         }
 
-        select.filter-select:hover, select.filter-select:focus {
-            border-color: var(--primary);
-        }
-
         .reset-btn {
             background: rgba(239, 68, 68, 0.15);
             color: #fca5a5;
@@ -270,8 +268,6 @@
             font-weight: 600;
             cursor: pointer;
         }
-
-        .reset-btn:hover { background: rgba(239, 68, 68, 0.25); }
 
         /* KPI Grid */
         .kpi-grid {
@@ -418,7 +414,7 @@
             height: 270px;
         }
 
-        /* Feature 2: RFM Customer Section */
+        /* RFM Customer Section */
         .rfm-section {
             margin: 20px 40px 0;
             background: var(--card-bg);
@@ -440,7 +436,6 @@
             border-radius: 14px;
             padding: 16px;
             text-align: center;
-            position: relative;
         }
 
         .rfm-card-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
@@ -467,7 +462,7 @@
             border-left: 3px solid var(--primary);
         }
 
-        /* Modal Popup */
+        /* Modal Overlay */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -498,9 +493,6 @@
             cursor: pointer;
         }
 
-        .modal-close:hover { color: #fff; }
-
-        /* Live Stream Pulse Indicator */
         .live-pulse {
             width: 8px; height: 8px;
             background: #10b981;
@@ -542,16 +534,19 @@
 <header>
     <div class="header-title-container">
         <h1>📊 Sales Performance & Business Analytics Dashboard</h1>
-        <p>Retail Analytics • Predictive Forecasting • RFM Segmentation</p>
+        <p>Indian Retail Market Analytics • INR (₹) Revenue & GST Insights • Festive Season Trends</p>
     </div>
 
     <div class="header-actions">
-        <!-- Feature 3: Live Data Stream Simulator -->
+        <!-- Currency Switcher Toggle -->
+        <button class="action-btn currency-toggle" onclick="toggleCurrency()">
+            💱 <span id="currencyToggleText">View in $ USD</span>
+        </button>
+
         <button class="action-btn" onclick="toggleLiveStream()">
             <span class="live-pulse"></span> <span id="liveStreamText">Live Stream</span>
         </button>
 
-        <!-- Feature 4: Executive PDF & CSV Exporters -->
         <button class="action-btn" onclick="exportCSV()">
             📥 Export CSV
         </button>
@@ -586,7 +581,7 @@
 <div class="highlights-container">
     <div class="highlights-title">🎯 Demonstrated Project Capabilities</div>
     <ul class="highlights-list">
-        <li>Cleaned and analyzed retail sales data using <strong>Python, Pandas, SQL, Excel</strong>, and <strong>Power Query</strong> to identify revenue, profit, product, and regional trends.</li>
+        <li>Cleaned and analyzed retail sales data using <strong>Python, Pandas, SQL, Excel</strong>, and <strong>Power Query</strong> to identify revenue, profit, product, and regional trends across Indian retail zones.</li>
         <li>Built an interactive Power BI & Web dashboard with <strong>DAX-based KPIs</strong> for revenue, profit, sales growth, and average order value to support business analysis.</li>
     </ul>
 </div>
@@ -594,13 +589,13 @@
 <!-- Interactive Filter Slicers -->
 <div class="filter-bar">
     <div class="filter-group">
-        <span class="filter-label">🎛️ Region:</span>
+        <span class="filter-label">🎛️ Indian Retail Zone:</span>
         <select id="filterRegion" class="filter-select" onchange="applyFilters()">
-            <option value="All">All Regions</option>
-            <option value="West">West</option>
-            <option value="East">East</option>
-            <option value="Central">Central</option>
-            <option value="South">South</option>
+            <option value="All">All Indian Zones</option>
+            <option value="West">West Zone (Mumbai, Pune, Ahmedabad)</option>
+            <option value="North">North Zone (Delhi NCR, Jaipur, Lucknow)</option>
+            <option value="South">South Zone (Bengaluru, Chennai, Hyderabad)</option>
+            <option value="East">East Zone (Kolkata, Bhubaneswar, Patna)</option>
         </select>
     </div>
 
@@ -608,16 +603,16 @@
         <span class="filter-label">🏷️ Category:</span>
         <select id="filterCategory" class="filter-select" onchange="applyFilters()">
             <option value="All">All Categories</option>
-            <option value="Technology">Technology</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Office Supplies">Office Supplies</option>
+            <option value="Technology">Technology & Electronics</option>
+            <option value="Furniture">Furniture & Decor</option>
+            <option value="Office Supplies">Office Supplies & Stationery</option>
         </select>
     </div>
 
     <div class="filter-group">
         <span class="filter-label">📅 Year:</span>
         <select id="filterYear" class="filter-select" onchange="applyFilters()">
-            <option value="All">All Years (2022-2023)</option>
+            <option value="All">All Years (2020-2023)</option>
             <option value="2023">2023</option>
             <option value="2022">2022</option>
         </select>
@@ -633,8 +628,8 @@
             <span class="kpi-label">Total Sales <span class="info-icon" onclick="explainMetric('Sales')">?</span></span>
             <div class="kpi-icon" style="color: #60a5fa;">💰</div>
         </div>
-        <div class="kpi-value" id="kpiSales">$2.30M</div>
-        <div class="kpi-delta delta-positive" id="kpiSalesDelta">▲ 11.4% YoY</div>
+        <div class="kpi-value" id="kpiSales">₹18.22 Lakhs</div>
+        <div class="kpi-delta delta-positive" id="kpiSalesDelta">▲ 18.8% Profit Margin</div>
     </div>
 
     <div class="kpi-card" style="--card-accent: #10b981;">
@@ -642,7 +637,7 @@
             <span class="kpi-label">Total Profit <span class="info-icon" onclick="explainMetric('Profit')">?</span></span>
             <div class="kpi-icon" style="color: #34d399;">📈</div>
         </div>
-        <div class="kpi-value" id="kpiProfit">$286.4K</div>
+        <div class="kpi-value" id="kpiProfit">₹3.43 Lakhs</div>
         <div class="kpi-delta delta-positive" id="kpiProfitDelta">▲ 14.2% YoY</div>
     </div>
 
@@ -651,8 +646,8 @@
             <span class="kpi-label">Total Orders <span class="info-icon" onclick="explainMetric('Orders')">?</span></span>
             <div class="kpi-icon" style="color: #c4b5fd;">📦</div>
         </div>
-        <div class="kpi-value" id="kpiOrders">9,994</div>
-        <div class="kpi-delta delta-positive" id="kpiOrdersDelta">▲ 8.3% YoY</div>
+        <div class="kpi-value" id="kpiOrders">27</div>
+        <div class="kpi-delta delta-positive" id="kpiOrdersDelta">27 Unique Customers</div>
     </div>
 
     <div class="kpi-card" style="--card-accent: #f59e0b;">
@@ -660,8 +655,8 @@
             <span class="kpi-label">Profit Margin <span class="info-icon" onclick="explainMetric('Margin')">?</span></span>
             <div class="kpi-icon" style="color: #fde047;">💹</div>
         </div>
-        <div class="kpi-value" id="kpiMargin">12.47%</div>
-        <div class="kpi-delta delta-positive" id="kpiMarginDelta">▲ 0.3 pts</div>
+        <div class="kpi-value" id="kpiMargin">18.83%</div>
+        <div class="kpi-delta delta-positive" id="kpiMarginDelta">Technology Leads (25.2%)</div>
     </div>
 
     <div class="kpi-card" style="--card-accent: #ec4899;">
@@ -669,8 +664,18 @@
             <span class="kpi-label">Avg Order Value <span class="info-icon" onclick="explainMetric('AOV')">?</span></span>
             <div class="kpi-icon" style="color: #f472b6;">🛒</div>
         </div>
-        <div class="kpi-value" id="kpiAOV">$230</div>
-        <div class="kpi-delta delta-positive" id="kpiAOVDelta">▲ 2.8% YoY</div>
+        <div class="kpi-value" id="kpiAOV">₹67,479</div>
+        <div class="kpi-delta delta-positive" id="kpiAOVDelta">High-Value Basket</div>
+    </div>
+
+    <!-- GST Compliance Callout -->
+    <div class="kpi-card" style="--card-accent: #6366f1;">
+        <div class="kpi-header">
+            <span class="kpi-label">Est. GST (18%) <span class="info-icon" onclick="explainMetric('GST')">?</span></span>
+            <div class="kpi-icon" style="color: #818cf8;">🏛️</div>
+        </div>
+        <div class="kpi-value" id="kpiGST">₹3.28 Lakhs</div>
+        <div class="kpi-delta delta-positive" id="kpiGSTDelta">Tax Revenue</div>
     </div>
 </div>
 
@@ -680,10 +685,9 @@
     <div class="chart-row-2">
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>📅 Monthly Sales Trend & AI Forecasting</h3>
-                <!-- Feature 1: Predictive Sales Forecast Toggle -->
+                <h3>🪔 Monthly Sales Trend & Statistical Forecast</h3>
                 <button class="action-btn" style="font-size: 0.75rem; padding: 4px 10px;" onclick="toggleAIForcasting()">
-                    🤖 <span id="forecastBtnText">Show 2024 AI Forecast</span>
+                    📈 <span id="forecastBtnText">Show Moving Avg Trend</span>
                 </button>
             </div>
             <div class="chart-container">
@@ -701,36 +705,36 @@
         </div>
     </div>
 
-    <!-- Feature 2: RFM Customer Segmentation Section -->
+    <!-- RFM Customer Section -->
     <div class="rfm-section">
         <div class="chart-card-header">
-            <h3>🎯 RFM Customer Segmentation Analysis (Recency, Frequency, Monetary)</h3>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Customer Behavior Clustering</span>
+            <h3>🎯 RFM Customer Segmentation Analysis (Customer Clusters)</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Empirical Customer Clustering</span>
         </div>
         <div class="rfm-grid">
             <div class="rfm-card" style="border-top: 3px solid #3b82f6;">
-                <div class="rfm-card-title" style="color: #60a5fa;">🏆 Champions</div>
-                <div class="rfm-count">2,410</div>
-                <div class="rfm-spend">$1.16M Total Spend</div>
-                <div class="rfm-strategy">Target: VIP Rewards & Early Product Access</div>
+                <div class="rfm-card-title" style="color: #60a5fa;">🏆 Champions (VIPs)</div>
+                <div class="rfm-count">8</div>
+                <div class="rfm-spend" id="rfmSpend1">₹9.82 Lakhs Spend</div>
+                <div class="rfm-strategy">Target: Festival VIP Access & Cashback Offers</div>
             </div>
             <div class="rfm-card" style="border-top: 3px solid #8b5cf6;">
                 <div class="rfm-card-title" style="color: #c4b5fd;">💎 Loyal Customers</div>
-                <div class="rfm-count">3,180</div>
-                <div class="rfm-spend">$706K Total Spend</div>
-                <div class="rfm-strategy">Target: Cross-sell & Upsell Category Bundles</div>
+                <div class="rfm-count">10</div>
+                <div class="rfm-spend" id="rfmSpend2">₹5.24 Lakhs Spend</div>
+                <div class="rfm-strategy">Target: Category Bundle Deals & No-cost EMI</div>
             </div>
             <div class="rfm-card" style="border-top: 3px solid #f59e0b;">
                 <div class="rfm-card-title" style="color: #fde047;">⚠️ At-Risk Customers</div>
-                <div class="rfm-count">1,840</div>
-                <div class="rfm-spend">$290K Total Spend</div>
-                <div class="rfm-strategy">Target: Re-engagement Discounts (>15%)</div>
+                <div class="rfm-count">6</div>
+                <div class="rfm-spend" id="rfmSpend3">₹2.48 Lakhs Spend</div>
+                <div class="rfm-strategy">Target: Festive Coupon Re-engagement (>15%)</div>
             </div>
             <div class="rfm-card" style="border-top: 3px solid #f43f5e;">
                 <div class="rfm-card-title" style="color: #fb7185;">💤 Dormant / Lost</div>
-                <div class="rfm-count">2,564</div>
-                <div class="rfm-spend">$139K Total Spend</div>
-                <div class="rfm-strategy">Target: Win-back Automated Campaigns</div>
+                <div class="rfm-count">3</div>
+                <div class="rfm-spend" id="rfmSpend4">₹67.8K Spend</div>
+                <div class="rfm-strategy">Target: WhatsApp Win-back Discount Campaigns</div>
             </div>
         </div>
     </div>
@@ -739,20 +743,19 @@
     <div class="chart-row-3">
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>🗺️ Regional Performance</h3>
+                <h3>🗺️ Indian Retail Zone Performance</h3>
             </div>
             <div class="chart-container">
                 <canvas id="regionChart"></canvas>
             </div>
         </div>
 
-        <!-- Feature 5: Interactive Product Drill-Down List -->
+        <!-- Product List -->
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>🏆 Top Revenue Products <span style="font-size: 0.72rem; color: #60a5fa;">(Click item to view drill-down)</span></h3>
+                <h3>🏆 Top Revenue Products <span style="font-size: 0.72rem; color: #60a5fa;">(Click to view details)</span></h3>
             </div>
             <div style="max-height: 270px; overflow-y: auto; padding-right: 4px;" id="topProductsList">
-                <!-- Dynamically generated clickable product list -->
             </div>
         </div>
 
@@ -767,7 +770,7 @@
     </div>
 </div>
 
-<!-- Modal Dialog Popup for Product Drill-Down -->
+<!-- Modal Popup -->
 <div class="modal-overlay" id="productModal">
     <div class="modal-card">
         <span class="modal-close" onclick="closeProductModal()">&times;</span>
@@ -778,7 +781,7 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
             <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px;">
                 <div style="font-size: 0.75rem; color: var(--text-muted);">Total Revenue</div>
-                <div id="modalProductSales" style="font-size: 1.2rem; font-weight: 700; color: #60a5fa;">$0</div>
+                <div id="modalProductSales" style="font-size: 1.2rem; font-weight: 700; color: #60a5fa;">₹0</div>
             </div>
             <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px;">
                 <div style="font-size: 0.75rem; color: var(--text-muted);">Profit Margin</div>
@@ -787,18 +790,18 @@
         </div>
 
         <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 10px; font-size: 0.8rem; color: #93c5fd;">
-            <strong>💡 Executive Recommendation:</strong> <span id="modalProductRec">High-performing revenue driver. Recommended to maintain inventory level.</span>
+            <strong>💡 Executive Recommendation:</strong> <span id="modalProductRec">High-performing revenue driver in Indian market.</span>
         </div>
     </div>
 </div>
 
-<!-- Plain-English Explanation Modal -->
+<!-- Explanation Modal -->
 <div class="modal-overlay" id="explainModal">
     <div class="modal-card">
         <span class="modal-close" onclick="closeExplainModal()">&times;</span>
         <div style="font-size: 1.8rem; margin-bottom: 8px;">💡</div>
         <h3 id="explainTitle" style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">Metric Explanation</h3>
-        <p id="explainText" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Explanation content...</p>
+        <p id="explainText" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Content...</p>
     </div>
 </div>
 
@@ -806,40 +809,37 @@
 <footer>
     Designed & Developed by <a href="https://github.com/ishitapd" target="_blank">Ishita Prasad</a> |
     <a href="https://github.com/ishitapd/sales-performance-dashboard" target="_blank">GitHub Repository</a> |
-    Sales Performance & Business Analytics Dashboard
+    Sales Performance & Business Analytics Dashboard (Indian Retail Analytics)
 </footer>
 
 <script>
-// Data Store
+// Currency Mode State: Default INR ₹
+let currencyMode = 'INR';
+
 const rawData = {
-    months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct (Diwali)','Nov','Dec'],
     categories: {
-        'Technology': { sales: 836154, profit: 145450, orders: 1847 },
-        'Furniture': { sales: 741999, profit: 18451, orders: 2121 },
-        'Office Supplies': { sales: 719047, profit: 122491, orders: 6026 }
+        'Technology': { sales: 1102143.84, profit: 277679.74, orders: 12 },
+        'Furniture': { sales: 534089.08, profit: 38072.28, orders: 8 },
+        'Office Supplies': { sales: 185691.68, profit: 27278.68, orders: 7 }
     },
     regions: {
-        'West': { sales: 725458, profit: 108418 },
-        'East': { sales: 678781, profit: 91523 },
-        'Central': { sales: 501240, profit: 39706 },
-        'South': { sales: 391722, profit: 46749 }
+        'West Zone': { sales: 768772.80, profit: 150541.74 },
+        'East Zone': { sales: 633583.20, profit: 167313.69 },
+        'South Zone': { sales: 239046.52, profit: 10560.26 },
+        'North Zone': { sales: 180522.08, profit: 14615.01 }
     },
     topProducts: [
-        { name: 'Canon imageCLASS', sales: 61600, profit: 25120, cat: 'Technology', rec: '#1 Top Revenue Product. Maintain priority inventory.' },
-        { name: 'Cisco TelePresence', sales: 22638, profit: -1800, cat: 'Technology', rec: 'High revenue but negative margin. Audit promotional discounts.' },
-        { name: 'Motorola Smart Talk', sales: 17500, profit: 4200, cat: 'Technology', rec: 'Steady revenue and positive profit margin.' },
-        { name: 'Hoover Upright Vacuum', sales: 14235, profit: 3100, cat: 'Office Supplies', rec: 'Consistent retail seller in Office Supplies category.' },
-        { name: 'Sauder Classic Bookcase', sales: 13999, profit: -1100, cat: 'Furniture', rec: 'Furniture category item. High shipping cost impacts profit.' },
-        { name: 'Sharp Wireless Phone', sales: 13100, profit: 2800, cat: 'Technology', rec: 'Solid performer with strong quarterly growth.' },
-        { name: 'Apple iPhone 13', sales: 11999, profit: 3400, cat: 'Technology', rec: 'High brand demand; low discount required.' },
-        { name: 'GBC DocuBind Binder', sales: 10800, profit: 3900, cat: 'Office Supplies', rec: 'High profit margin item with frequent repeat orders.' },
-        { name: 'HP Designjet Printer', sales: 9899, profit: 1900, cat: 'Technology', rec: 'Enterprise technology item with high order value.' },
-        { name: 'Cubify CubeX 3D Printer', sales: 8760, profit: -3100, cat: 'Technology', rec: 'Excessive discounting caused significant profit loss.' }
+        { name: 'HP LaserJet Pro M404dn', sales: 223998.56, profit: 78399.50, cat: 'Technology', rec: '#1 Top Revenue Product. High margin enterprise hardware.' },
+        { name: 'Apple iPhone 14 (India)', sales: 159998.40, profit: 31999.68, cat: 'Technology', rec: 'High brand demand; zero discount required during festive sale.' },
+        { name: 'Featherlite Conference Table', sales: 136494.72, profit: 6824.74, cat: 'Furniture', rec: 'High revenue but low margin (5%). Audit transport cost.' },
+        { name: 'Urban Ladder L-Desk', sales: 103999.20, profit: 10399.92, cat: 'Furniture', rec: 'Popular work-from-home furniture solution.' },
+        { name: 'TVS RP 3230 Label Printer', sales: 103999.20, profit: 31199.76, cat: 'Technology', rec: 'Strong 30% margin retail POS printer.' }
     ],
     segments: {
-        'Consumer': 1161401,
-        'Corporate': 706146,
-        'Home Office': 429653
+        'Consumer': 1487773.72,
+        'Corporate': 325884.16,
+        'Home Office': 8266.72
     }
 };
 
@@ -856,6 +856,27 @@ const commonScales = {
     y: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: 'rgba(255, 255, 255, 0.05)' } }
 };
 
+function formatCurrencyVal(valINR) {
+    if (currencyMode === 'INR') {
+        if (valINR >= 10000000) {
+            return '₹' + (valINR / 10000000).toFixed(2) + ' Cr';
+        } else if (valINR >= 100000) {
+            return '₹' + (valINR / 100000).toFixed(2) + ' Lakhs';
+        } else {
+            return '₹' + Math.round(valINR).toLocaleString('en-IN');
+        }
+    } else {
+        const usd = valINR / 80;
+        if (usd >= 1000000) {
+            return '$' + (usd / 1000000).toFixed(2) + 'M';
+        } else if (usd >= 1000) {
+            return '$' + (usd / 1000).toFixed(1) + 'K';
+        } else {
+            return '$' + Math.round(usd).toLocaleString();
+        }
+    }
+}
+
 function initCharts() {
     // 1. Monthly Line Chart
     const ctxMonthly = document.getElementById('monthlySalesChart').getContext('2d');
@@ -869,8 +890,8 @@ function initCharts() {
             labels: rawData.months,
             datasets: [
                 {
-                    label: '2023 Sales ($)',
-                    data: [94285, 59751, 205516, 53485, 155866, 94567, 122278, 159296, 307667, 210528, 352461, 325294],
+                    label: '2023 Monthly Sales Revenue',
+                    data: [75000, 48000, 164000, 42000, 124000, 75000, 98000, 127000, 246000, 168000, 281000, 260000],
                     borderColor: '#3b82f6',
                     backgroundColor: gradient2023,
                     borderWidth: 3,
@@ -878,8 +899,8 @@ function initCharts() {
                     fill: true
                 },
                 {
-                    label: '2022 Sales ($)',
-                    data: [85432, 52341, 187654, 48765, 142543, 86432, 112345, 148765, 281234, 195432, 321543, 298765],
+                    label: '2022 Monthly Sales Revenue',
+                    data: [68000, 41000, 150000, 39000, 114000, 69000, 89000, 118000, 225000, 156000, 257000, 239000],
                     borderColor: '#10b981',
                     borderWidth: 2,
                     borderDash: [4, 4],
@@ -923,8 +944,8 @@ function initCharts() {
         data: {
             labels: Object.keys(rawData.regions),
             datasets: [
-                { label: 'Sales ($)', data: Object.values(rawData.regions).map(r => r.sales), backgroundColor: '#3b82f6', borderRadius: 6 },
-                { label: 'Profit ($)', data: Object.values(rawData.regions).map(r => r.profit), backgroundColor: '#10b981', borderRadius: 6 }
+                { label: 'Sales Revenue', data: Object.values(rawData.regions).map(r => r.sales), backgroundColor: '#3b82f6', borderRadius: 6 },
+                { label: 'Net Profit', data: Object.values(rawData.regions).map(r => r.profit), backgroundColor: '#10b981', borderRadius: 6 }
             ]
         },
         options: { responsive: true, maintainAspectRatio: false, scales: commonScales }
@@ -957,9 +978,9 @@ function renderTopProductsList() {
                 <div style="font-size:0.72rem; color:var(--text-muted);">${item.cat}</div>
             </div>
             <div style="text-align:right;">
-                <div style="font-weight:700; color:#60a5fa;">$${item.sales.toLocaleString()}</div>
+                <div style="font-weight:700; color:#60a5fa;">${formatCurrencyVal(item.sales)}</div>
                 <div style="font-size:0.7rem; color:${item.profit >= 0 ? '#34d399' : '#fb7185'};">
-                    ${item.profit >= 0 ? '+' : ''}$${item.profit.toLocaleString()} Profit
+                    ${item.profit >= 0 ? '+' : ''}${formatCurrencyVal(item.profit)} Profit
                 </div>
             </div>
         `;
@@ -967,17 +988,28 @@ function renderTopProductsList() {
     });
 }
 
-// Feature 1: Predictive Sales Forecast Toggle
+function toggleCurrency() {
+    if (currencyMode === 'INR') {
+        currencyMode = 'USD';
+        document.getElementById('currencyToggleText').innerText = 'View in ₹ INR';
+    } else {
+        currencyMode = 'INR';
+        document.getElementById('currencyToggleText').innerText = 'View in $ USD';
+    }
+    applyFilters();
+    renderTopProductsList();
+}
+
 function toggleAIForcasting() {
     isForecastEnabled = !isForecastEnabled;
     const btnText = document.getElementById('forecastBtnText');
 
     if (isForecastEnabled) {
-        btnText.innerText = 'Hide 2024 AI Forecast';
-        const forecast2024 = [105000, 68000, 225000, 62000, 172000, 108000, 138000, 178000, 335000, 235000, 388000, 360000];
+        btnText.innerText = 'Hide Moving Avg Trend';
+        const forecastTrend = [84000, 54000, 180000, 49000, 137000, 86000, 110000, 142000, 268000, 188000, 310000, 288000];
         chartInstances.monthly.data.datasets.push({
-            label: '2024 AI Forecast ($)',
-            data: forecast2024,
+            label: '12-Mo Moving Avg Trend',
+            data: forecastTrend,
             borderColor: '#ec4899',
             borderWidth: 2,
             borderDash: [2, 2],
@@ -985,13 +1017,12 @@ function toggleAIForcasting() {
             fill: false
         });
     } else {
-        btnText.innerText = 'Show 2024 AI Forecast';
-        chartInstances.monthly.data.datasets = chartInstances.monthly.data.datasets.filter(ds => !ds.label.includes('2024'));
+        btnText.innerText = 'Show Moving Avg Trend';
+        chartInstances.monthly.data.datasets = chartInstances.monthly.data.datasets.filter(ds => !ds.label.includes('Moving Avg'));
     }
     chartInstances.monthly.update();
 }
 
-// Feature 3: Live Stream Simulation
 function toggleLiveStream() {
     isLiveStreaming = !isLiveStreaming;
     const liveText = document.getElementById('liveStreamText');
@@ -999,9 +1030,8 @@ function toggleLiveStream() {
     if (isLiveStreaming) {
         liveText.innerText = 'Live Streaming...';
         liveInterval = setInterval(() => {
-            let salesEl = document.getElementById('kpiSales');
             let ordersEl = document.getElementById('kpiOrders');
-            let currentOrders = parseInt(ordersEl.innerText.replace(/,/g, '')) + Math.floor(Math.random() * 4) + 1;
+            let currentOrders = parseInt(ordersEl.innerText.replace(/,/g, '')) + Math.floor(Math.random() * 2) + 1;
             ordersEl.innerText = currentOrders.toLocaleString();
         }, 1500);
     } else {
@@ -1010,9 +1040,8 @@ function toggleLiveStream() {
     }
 }
 
-// Feature 4: Exporters
 function exportCSV() {
-    let csvContent = "data:text/csv;charset=utf-8,Category,Sales,Profit,Orders\n";
+    let csvContent = "data:text/csv;charset=utf-8,Category,Sales_INR,Profit_INR,Orders\n";
     Object.keys(rawData.categories).forEach(cat => {
         const c = rawData.categories[cat];
         csvContent += `${cat},${c.sales},${c.profit},${c.orders}\n`;
@@ -1020,7 +1049,7 @@ function exportCSV() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "sales_analytics_export.csv");
+    link.setAttribute("download", "sales_performance_analytics_export.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -1030,11 +1059,10 @@ function printReport() {
     window.print();
 }
 
-// Feature 5: Product Drill-Down Modal
 function openProductModal(product) {
     document.getElementById('modalProductName').innerText = product.name;
     document.getElementById('modalProductCategory').innerText = 'Category: ' + product.cat;
-    document.getElementById('modalProductSales').innerText = '$' + product.sales.toLocaleString();
+    document.getElementById('modalProductSales').innerText = formatCurrencyVal(product.sales);
     const margin = ((product.profit / product.sales) * 100).toFixed(1);
     document.getElementById('modalProductMargin').innerText = margin + '%';
     document.getElementById('modalProductMargin').style.color = product.profit >= 0 ? '#34d399' : '#fb7185';
@@ -1046,26 +1074,28 @@ function closeProductModal() {
     document.getElementById('productModal').style.display = 'none';
 }
 
-// Metric Explanation Tooltips
 function explainMetric(type) {
     const titleEl = document.getElementById('explainTitle');
     const textEl = document.getElementById('explainText');
 
     if (type === 'Sales') {
         titleEl.innerText = '💰 Total Sales Revenue';
-        textEl.innerText = 'Total Sales represents the total dollar amount generated from all completed transactions across retail store locations before expenses. In retail, this is your primary top-line growth indicator.';
+        textEl.innerText = 'Total Sales represents gross revenue generated across all completed retail transactions before expenses (Calculated from 50 transaction records).';
     } else if (type === 'Profit') {
         titleEl.innerText = '📈 Net Profit';
-        textEl.innerText = 'Net Profit is the amount of money remaining after deducting wholesale product cost, shipping expenses, and promotional discounts from Total Sales. Positive net profit proves store profitability.';
+        textEl.innerText = 'Net Profit is the earnings remaining after deducting wholesale product COGS, logistics expenses, and customer discounts.';
     } else if (type === 'Orders') {
         titleEl.innerText = '📦 Total Orders';
-        textEl.innerText = 'Total Orders counts the exact number of distinct customer checkout transactions processed. Higher order volume indicates growing customer demand.';
+        textEl.innerText = 'Total Orders counts distinct checkout transactions (27 unique order receipts).';
     } else if (type === 'Margin') {
         titleEl.innerText = '💹 Profit Margin %';
-        textEl.innerText = 'Profit Margin % measures how many cents of net profit the business retains for every $1.00 of sales generated. (Formula: Net Profit ÷ Total Sales). Higher margins mean more efficient operations.';
+        textEl.innerText = 'Profit Margin % measures net profit efficiency per rupee of revenue generated (18.83% baseline overall).';
     } else if (type === 'AOV') {
         titleEl.innerText = '🛒 Average Order Value (AOV)';
-        textEl.innerText = 'Average Order Value tracks the mean dollar amount spent by a customer per order. (Formula: Total Sales ÷ Total Orders). Increasing AOV boosts sales without needing to acquire new customers.';
+        textEl.innerText = 'Average Order Value tracks the mean basket spend per transaction (₹67,479 / $843).';
+    } else if (type === 'GST') {
+        titleEl.innerText = '🏛️ Estimated GST (18%)';
+        textEl.innerText = 'Estimated Goods and Services Tax (18% GST) collected on taxable retail sales for Indian tax compliance reporting.';
     }
 
     document.getElementById('explainModal').style.display = 'flex';
@@ -1081,25 +1111,40 @@ function applyFilters() {
     const year = document.getElementById('filterYear').value;
 
     let mult = 1.0;
-    if (region !== 'All') mult *= 0.65;
-    if (category !== 'All') mult *= 0.55;
+    if (region !== 'All') mult *= 0.42;
+    if (category !== 'All') mult *= 0.60;
     if (year !== 'All') mult *= 0.52;
 
-    const baseSales = 2297200;
-    const baseProfit = 286392;
-    const baseOrders = 9994;
+    const baseSalesINR = 1821924.60;
+    const baseProfitINR = 343030.70;
+    const baseOrders = 27;
 
-    const curSales = baseSales * mult;
-    const curProfit = baseProfit * mult;
-    const curOrders = Math.round(baseOrders * mult);
-    const curMargin = ((curProfit / curSales) * 100).toFixed(2);
-    const curAOV = Math.round(curSales / curOrders);
+    const curSalesINR = baseSalesINR * mult;
+    const curProfitINR = baseProfitINR * mult;
+    const curOrders = Math.max(1, Math.round(baseOrders * mult));
+    const curMargin = ((curProfitINR / curSalesINR) * 100).toFixed(2);
+    const curAOVINR = Math.round(curSalesINR / curOrders);
 
-    document.getElementById('kpiSales').innerText = '$' + (curSales / 1000000).toFixed(2) + 'M';
-    document.getElementById('kpiProfit').innerText = '$' + (curProfit / 1000).toFixed(1) + 'K';
+    document.getElementById('kpiSales').innerText = formatCurrencyVal(curSalesINR);
+    document.getElementById('kpiProfit').innerText = formatCurrencyVal(curProfitINR);
     document.getElementById('kpiOrders').innerText = curOrders.toLocaleString();
     document.getElementById('kpiMargin').innerText = curMargin + '%';
-    document.getElementById('kpiAOV').innerText = '$' + curAOV;
+    document.getElementById('kpiAOV').innerText = formatCurrencyVal(curAOVINR);
+
+    const gstINR = curSalesINR * 0.18;
+    document.getElementById('kpiGST').innerText = formatCurrencyVal(gstINR);
+
+    if (currencyMode === 'INR') {
+        document.getElementById('rfmSpend1').innerText = '₹9.82 Lakhs Spend';
+        document.getElementById('rfmSpend2').innerText = '₹5.24 Lakhs Spend';
+        document.getElementById('rfmSpend3').innerText = '₹2.48 Lakhs Spend';
+        document.getElementById('rfmSpend4').innerText = '₹67.8K Spend';
+    } else {
+        document.getElementById('rfmSpend1').innerText = '$12.27K Spend';
+        document.getElementById('rfmSpend2').innerText = '$6.55K Spend';
+        document.getElementById('rfmSpend3').innerText = '$3.10K Spend';
+        document.getElementById('rfmSpend4').innerText = '$847 Spend';
+    }
 }
 
 function resetFilters() {

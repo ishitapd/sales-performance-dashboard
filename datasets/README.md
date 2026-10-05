@@ -1,6 +1,36 @@
 # 📂 Datasets
 
-## Dataset 1: Superstore Sales
+## Dataset 1: Indian Retail Sample (`sample_data.csv`)
+
+Local file used by this repo. Values are **INR**. Geography is Indian zones/cities. Checkout mix includes UPI, cards, COD and EMI.
+
+### Columns
+| Column | Type | Description |
+|--------|------|-------------|
+| Row ID | Integer | Unique row identifier |
+| Order ID | String | Unique order identifier (`IN-YYYY-…`) |
+| Order Date | Date | Date of order placement |
+| Ship Date | Date | Date of shipment |
+| Ship Mode | String | Shipping category |
+| Customer Name | String | Customer full name |
+| Segment | String | Consumer / Corporate / Home Office |
+| Region | String | East / West / North / South |
+| City | String | Indian city |
+| State | String | Indian state / UT |
+| Payment | String | UPI / Cards / COD / EMI |
+| Category | String | Furniture / Office Supplies / Technology |
+| Sub-Category | String | Product sub-category |
+| Product Name | String | India-market product name |
+| Sales | Float | Revenue in INR (₹) |
+| Quantity | Integer | Units ordered |
+| Discount | Float | Discount applied (0–1) |
+| Profit | Float | Net profit in INR (₹) |
+
+The Kaggle Superstore file below is a larger raw source if you want to rebuild the model. Convert USD → INR and map US regions to Indian zones before using it in this dashboard.
+
+---
+
+## Optional: Kaggle Superstore (raw USD source)
 
 - **Download:** https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
 - **File:** `Sample - Superstore.csv`

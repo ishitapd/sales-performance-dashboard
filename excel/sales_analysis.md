@@ -1,38 +1,27 @@
-# 📗 Excel Analysis Guide — Sales Performance & Business Analytics Dashboard
+# 📗 Excel Data Analysis Workflow
 
-**Author:** Ishita Prasad  
-**Project:** Sales Performance & Business Analytics Dashboard
+**Project:** Sales Performance & Business Analytics Dashboard  
+**Author:** Ishita Prasad (@ishitapd)
 
 ---
 
-## 📌 Executive Data Analysis Workflow
+## 📌 Excel Workbook Structure & Pivot Tables
 
-### 1. Data Cleaning & Power Query Setup
-- Import `datasets/sample_data.csv` via Excel Power Query (`Data` → `Get Data` → `From Text/CSV`).
-- Transform Data Types:
-  - `Order Date`, `Ship Date` → `Date`
-  - `Sales`, `Profit`, `Discount` → `Currency / Decimal`
-  - `Quantity` → `Whole Number`
-- Remove duplicates and null values.
+### 1. Data Cleaning in Excel
+- Import `datasets/sample_data.csv` into Table `SalesTable`.
+- Format `Order Date` and `Ship Date` as `YYYY-MM-DD`.
+- Insert column `Shipping Days`: `=[@[Ship Date]] - [@[Order Date]]`.
+- Insert column `Profit Margin %`: `=[@[Profit]] / [@[Sales]]`.
 
-### 2. Core Pivot Table Specifications
+### 2. Pivot Tables Built
+1. **Pivot 1: Monthly Sales & Profit Trend**: Rows = Order Date (Grouped by Year & Month), Values = Sum of Sales, Sum of Profit.
+2. **Pivot 2: Region Performance**: Rows = Region, Values = Sum of Sales, Sum of Profit, Profit Margin %.
+3. **Pivot 3: Top 10 Products**: Rows = Product Name (Filtered to Top 10 by Sales), Values = Sum of Sales.
+4. **Pivot 4: Category Breakdown**: Rows = Category, Sub-Category, Values = Sum of Sales, Count of Orders.
 
-| Pivot Table | Rows | Values | Primary Visualization |
-|:---|:---|:---|:---|
-| **Monthly Revenue Trend** | `Order Date` (Month & Year) | `Sum of Sales`, `Sum of Profit` | Area / Line Chart with YoY comparisons |
-| **Regional Sales Breakdown** | `Region` | `Sum of Sales`, `Sum of Profit` | Grouped Bar Chart |
-| **Top 10 Revenue Products** | `Product Name` (Top 10 Filter) | `Sum of Sales` | Horizontal Bar Chart |
-| **Category Distribution** | `Category`, `Sub-Category` | `Sum of Sales`, `Profit Margin %` | Donut Chart |
-
-### 3. Key Excel Measures & Formulas
-
+### 3. Formulas Demonstrated
 ```excel
-// Profit Margin Percentage
-=SUM([Profit]) / SUM([Sales])
-
-// Average Order Value (AOV)
-=AVERAGE([Sales])
-
-// Year-over-Year (YoY) Sales Growth
-=(SUM(Sales_2023) - SUM(Sales_2022)) / SUM(Sales_2022)
+=SUM(SalesTable[Sales])
+=AVERAGE(SalesTable[Sales])
+=XLOOKUP([@[Sub-Category]], CategoryLookupTable[Sub-Category], CategoryLookupTable[Category])
 ```
