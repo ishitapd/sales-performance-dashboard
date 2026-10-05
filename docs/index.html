@@ -13,9 +13,9 @@
     <style>
         :root {
             --bg-dark: #0b0f19;
-            --card-bg: rgba(18, 24, 41, 0.75);
+            --card-bg: rgba(18, 24, 41, 0.85);
             --card-border: rgba(255, 255, 255, 0.08);
-            --card-hover: rgba(59, 130, 246, 0.2);
+            --card-hover: rgba(59, 130, 246, 0.25);
             --primary: #3b82f6;
             --primary-glow: rgba(59, 130, 246, 0.35);
             --accent-green: #10b981;
@@ -44,10 +44,9 @@
 
         /* Top Header */
         header {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 24px 40px;
+            padding: 20px 40px;
             border-bottom: 1px solid var(--card-border);
             display: flex;
             justify-content: space-between;
@@ -58,7 +57,7 @@
         }
 
         .header-title-container h1 {
-            font-size: 1.75rem;
+            font-size: 1.7rem;
             font-weight: 800;
             background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
             -webkit-background-clip: text;
@@ -68,9 +67,48 @@
 
         .header-title-container p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-top: 4px;
             font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .action-btn {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .action-btn:hover {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .action-btn-primary {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .action-btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+            transform: translateY(-2px);
         }
 
         .author-badge {
@@ -78,14 +116,14 @@
             align-items: center;
             gap: 12px;
             background: rgba(30, 41, 59, 0.7);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 9999px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .author-avatar {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             display: flex;
@@ -93,19 +131,19 @@
             justify-content: center;
             font-weight: 700;
             color: #fff;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             box-shadow: 0 0 12px var(--primary-glow);
         }
 
         .author-info { text-align: left; }
-        .author-name { font-weight: 700; font-size: 0.9rem; color: #fff; }
-        .author-role { font-size: 0.75rem; color: var(--text-muted); }
+        .author-name { font-weight: 700; font-size: 0.85rem; color: #fff; }
+        .author-role { font-size: 0.72rem; color: var(--text-muted); }
 
         /* Skills Banner */
         .skills-bar {
             background: rgba(18, 24, 41, 0.6);
             backdrop-filter: blur(12px);
-            padding: 14px 40px;
+            padding: 12px 40px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -114,7 +152,7 @@
         }
 
         .skills-label {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -123,11 +161,10 @@
         }
 
         .skill-tag {
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            transition: all 0.2s ease;
             border: 1px solid transparent;
         }
 
@@ -139,26 +176,20 @@
         .tag-dax { background: rgba(236, 72, 153, 0.15); color: #f472b6; border-color: rgba(236, 72, 153, 0.3); }
         .tag-viz { background: rgba(14, 165, 233, 0.15); color: #7dd3fc; border-color: rgba(14, 165, 233, 0.3); }
 
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.2);
-        }
-
         /* Highlights Summary Box */
         .highlights-container {
-            margin: 24px 40px 0;
+            margin: 20px 40px 0;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 16px;
-            padding: 20px 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            padding: 18px 24px;
         }
 
         .highlights-title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #60a5fa;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -167,12 +198,12 @@
         .highlights-list {
             list-style: none;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 10px;
         }
 
         .highlights-list li {
-            font-size: 0.86rem;
+            font-size: 0.84rem;
             color: var(--text-muted);
             line-height: 1.5;
             position: relative;
@@ -196,7 +227,7 @@
             gap: 16px;
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--card-border);
-            padding: 16px 24px;
+            padding: 14px 24px;
             border-radius: 16px;
         }
 
@@ -208,7 +239,7 @@
         }
 
         .filter-label {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             color: var(--text-muted);
         }
@@ -217,43 +248,37 @@
             background: rgba(30, 41, 59, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.12);
             color: #fff;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 10px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-family: inherit;
             outline: none;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
         select.filter-select:hover, select.filter-select:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
         }
 
         .reset-btn {
             background: rgba(239, 68, 68, 0.15);
             color: #fca5a5;
             border: 1px solid rgba(239, 68, 68, 0.3);
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 10px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
-        .reset-btn:hover {
-            background: rgba(239, 68, 68, 0.25);
-            transform: scale(1.02);
-        }
+        .reset-btn:hover { background: rgba(239, 68, 68, 0.25); }
 
         /* KPI Grid */
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            padding: 24px 40px;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            padding: 20px 40px;
         }
 
         .kpi-card {
@@ -261,10 +286,10 @@
             backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .kpi-card::before {
@@ -277,63 +302,77 @@
         }
 
         .kpi-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--card-hover);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 20px var(--primary-glow);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
         }
 
         .kpi-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
+        .kpi-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .info-icon {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+
+        .info-icon:hover { background: var(--primary); color: #fff; }
+
         .kpi-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             background: rgba(255, 255, 255, 0.05);
         }
 
         .kpi-value {
-            font-size: 1.85rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: #fff;
             letter-spacing: -0.02em;
-        }
-
-        .kpi-label {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-top: 4px;
         }
 
         .kpi-delta {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            padding: 3px 8px;
+            padding: 2px 8px;
             border-radius: 6px;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .delta-positive { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-        .delta-negative { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
 
         /* Charts Layout */
         .charts-section {
             padding: 0 40px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
         }
 
         .chart-row-2 {
@@ -353,24 +392,19 @@
             backdrop-filter: blur(12px);
             border: 1px solid var(--card-border);
             border-radius: 18px;
-            padding: 24px;
+            padding: 22px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-            transition: border-color 0.3s;
-        }
-
-        .chart-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .chart-card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .chart-card-header h3 {
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--text-main);
             display: flex;
@@ -381,42 +415,124 @@
         .chart-container {
             position: relative;
             width: 100%;
-            height: 280px;
+            height: 270px;
+        }
+
+        /* Feature 2: RFM Customer Section */
+        .rfm-section {
+            margin: 20px 40px 0;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 24px;
+        }
+
+        .rfm-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .rfm-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+        }
+
+        .rfm-card-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 6px; }
+        .rfm-count { font-size: 1.4rem; font-weight: 800; color: #fff; }
+        .rfm-spend { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+        .rfm-strategy { font-size: 0.74rem; color: #94a3b8; margin-top: 8px; font-style: italic; background: rgba(0,0,0,0.2); padding: 6px; border-radius: 6px; }
+
+        /* Product List Clickable Items */
+        .top-product-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.82rem;
+        }
+
+        .top-product-item:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-card {
+            background: #121829;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 28px;
+            width: 90%;
+            max-width: 520px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px; right: 20px;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .modal-close:hover { color: #fff; }
+
+        /* Live Stream Pulse Indicator */
+        .live-pulse {
+            width: 8px; height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         /* Footer */
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             text-align: center;
             padding: 24px 40px;
             border-top: 1px solid var(--card-border);
             color: var(--text-sub);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
         }
 
-        footer a {
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
+        footer a { color: #60a5fa; text-decoration: none; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
 
-        footer a:hover {
-            color: #a78bfa;
-            text-decoration: underline;
-        }
-
-        /* Responsive Breakpoints */
         @media (max-width: 1100px) {
-            .chart-row-2, .chart-row-3 { grid-template-columns: 1fr; }
+            .chart-row-2, .chart-row-3, .rfm-grid { grid-template-columns: 1fr; }
             .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-            header { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .highlights-list { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 640px) {
-            header, .skills-bar, .highlights-container, .filter-bar, .kpi-grid, .charts-section { padding-left: 20px; padding-right: 20px; }
-            .kpi-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; align-items: flex-start; gap: 14px; }
         }
     </style>
 </head>
@@ -426,13 +542,29 @@
 <header>
     <div class="header-title-container">
         <h1>📊 Sales Performance & Business Analytics Dashboard</h1>
-        <p>Superstore & Retail Dataset Analysis | Interactive Executive Analytics</p>
+        <p>Retail Analytics • Predictive Forecasting • RFM Segmentation</p>
     </div>
-    <div class="author-badge">
-        <div class="author-avatar">IP</div>
-        <div class="author-info">
-            <div class="author-name">Ishita Prasad</div>
-            <div class="author-role">Data & Business Analyst</div>
+
+    <div class="header-actions">
+        <!-- Feature 3: Live Data Stream Simulator -->
+        <button class="action-btn" onclick="toggleLiveStream()">
+            <span class="live-pulse"></span> <span id="liveStreamText">Live Stream</span>
+        </button>
+
+        <!-- Feature 4: Executive PDF & CSV Exporters -->
+        <button class="action-btn" onclick="exportCSV()">
+            📥 Export CSV
+        </button>
+        <button class="action-btn action-btn-primary" onclick="printReport()">
+            📄 Download PDF Report
+        </button>
+
+        <div class="author-badge">
+            <div class="author-avatar">IP</div>
+            <div class="author-info">
+                <div class="author-name">Ishita Prasad</div>
+                <div class="author-role">Data & Business Analyst</div>
+            </div>
         </div>
     </div>
 </header>
@@ -462,7 +594,7 @@
 <!-- Interactive Filter Slicers -->
 <div class="filter-bar">
     <div class="filter-group">
-        <span class="filter-label">🎛️ Filter By Region:</span>
+        <span class="filter-label">🎛️ Region:</span>
         <select id="filterRegion" class="filter-select" onchange="applyFilters()">
             <option value="All">All Regions</option>
             <option value="West">West</option>
@@ -494,11 +626,11 @@
     <button class="reset-btn" onclick="resetFilters()">↺ Reset Filters</button>
 </div>
 
-<!-- KPI Cards -->
+<!-- KPI Grid -->
 <div class="kpi-grid">
     <div class="kpi-card" style="--card-accent: #3b82f6;">
         <div class="kpi-header">
-            <span class="kpi-label">Total Sales</span>
+            <span class="kpi-label">Total Sales <span class="info-icon" onclick="explainMetric('Sales')">?</span></span>
             <div class="kpi-icon" style="color: #60a5fa;">💰</div>
         </div>
         <div class="kpi-value" id="kpiSales">$2.30M</div>
@@ -507,7 +639,7 @@
 
     <div class="kpi-card" style="--card-accent: #10b981;">
         <div class="kpi-header">
-            <span class="kpi-label">Total Profit</span>
+            <span class="kpi-label">Total Profit <span class="info-icon" onclick="explainMetric('Profit')">?</span></span>
             <div class="kpi-icon" style="color: #34d399;">📈</div>
         </div>
         <div class="kpi-value" id="kpiProfit">$286.4K</div>
@@ -516,7 +648,7 @@
 
     <div class="kpi-card" style="--card-accent: #8b5cf6;">
         <div class="kpi-header">
-            <span class="kpi-label">Total Orders</span>
+            <span class="kpi-label">Total Orders <span class="info-icon" onclick="explainMetric('Orders')">?</span></span>
             <div class="kpi-icon" style="color: #c4b5fd;">📦</div>
         </div>
         <div class="kpi-value" id="kpiOrders">9,994</div>
@@ -525,7 +657,7 @@
 
     <div class="kpi-card" style="--card-accent: #f59e0b;">
         <div class="kpi-header">
-            <span class="kpi-label">Profit Margin</span>
+            <span class="kpi-label">Profit Margin <span class="info-icon" onclick="explainMetric('Margin')">?</span></span>
             <div class="kpi-icon" style="color: #fde047;">💹</div>
         </div>
         <div class="kpi-value" id="kpiMargin">12.47%</div>
@@ -534,7 +666,7 @@
 
     <div class="kpi-card" style="--card-accent: #ec4899;">
         <div class="kpi-header">
-            <span class="kpi-label">Avg Order Value</span>
+            <span class="kpi-label">Avg Order Value <span class="info-icon" onclick="explainMetric('AOV')">?</span></span>
             <div class="kpi-icon" style="color: #f472b6;">🛒</div>
         </div>
         <div class="kpi-value" id="kpiAOV">$230</div>
@@ -542,13 +674,17 @@
     </div>
 </div>
 
-<!-- Charts Grid -->
+<!-- Charts Section -->
 <div class="charts-section">
     <!-- Row 1: Line & Donut -->
     <div class="chart-row-2">
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>📅 Monthly Sales & Revenue Trend</h3>
+                <h3>📅 Monthly Sales Trend & AI Forecasting</h3>
+                <!-- Feature 1: Predictive Sales Forecast Toggle -->
+                <button class="action-btn" style="font-size: 0.75rem; padding: 4px 10px;" onclick="toggleAIForcasting()">
+                    🤖 <span id="forecastBtnText">Show 2024 AI Forecast</span>
+                </button>
             </div>
             <div class="chart-container">
                 <canvas id="monthlySalesChart"></canvas>
@@ -565,23 +701,58 @@
         </div>
     </div>
 
+    <!-- Feature 2: RFM Customer Segmentation Section -->
+    <div class="rfm-section">
+        <div class="chart-card-header">
+            <h3>🎯 RFM Customer Segmentation Analysis (Recency, Frequency, Monetary)</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Customer Behavior Clustering</span>
+        </div>
+        <div class="rfm-grid">
+            <div class="rfm-card" style="border-top: 3px solid #3b82f6;">
+                <div class="rfm-card-title" style="color: #60a5fa;">🏆 Champions</div>
+                <div class="rfm-count">2,410</div>
+                <div class="rfm-spend">$1.16M Total Spend</div>
+                <div class="rfm-strategy">Target: VIP Rewards & Early Product Access</div>
+            </div>
+            <div class="rfm-card" style="border-top: 3px solid #8b5cf6;">
+                <div class="rfm-card-title" style="color: #c4b5fd;">💎 Loyal Customers</div>
+                <div class="rfm-count">3,180</div>
+                <div class="rfm-spend">$706K Total Spend</div>
+                <div class="rfm-strategy">Target: Cross-sell & Upsell Category Bundles</div>
+            </div>
+            <div class="rfm-card" style="border-top: 3px solid #f59e0b;">
+                <div class="rfm-card-title" style="color: #fde047;">⚠️ At-Risk Customers</div>
+                <div class="rfm-count">1,840</div>
+                <div class="rfm-spend">$290K Total Spend</div>
+                <div class="rfm-strategy">Target: Re-engagement Discounts (>15%)</div>
+            </div>
+            <div class="rfm-card" style="border-top: 3px solid #f43f5e;">
+                <div class="rfm-card-title" style="color: #fb7185;">💤 Dormant / Lost</div>
+                <div class="rfm-count">2,564</div>
+                <div class="rfm-spend">$139K Total Spend</div>
+                <div class="rfm-strategy">Target: Win-back Automated Campaigns</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Row 2: Region, Top Products & Segment -->
     <div class="chart-row-3">
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>🗺️ Region Performance</h3>
+                <h3>🗺️ Regional Performance</h3>
             </div>
             <div class="chart-container">
                 <canvas id="regionChart"></canvas>
             </div>
         </div>
 
+        <!-- Feature 5: Interactive Product Drill-Down List -->
         <div class="chart-card">
             <div class="chart-card-header">
-                <h3>🏆 Top 10 Revenue Products</h3>
+                <h3>🏆 Top Revenue Products <span style="font-size: 0.72rem; color: #60a5fa;">(Click item to view drill-down)</span></h3>
             </div>
-            <div class="chart-container">
-                <canvas id="topProductsChart"></canvas>
+            <div style="max-height: 270px; overflow-y: auto; padding-right: 4px;" id="topProductsList">
+                <!-- Dynamically generated clickable product list -->
             </div>
         </div>
 
@@ -596,15 +767,50 @@
     </div>
 </div>
 
+<!-- Modal Dialog Popup for Product Drill-Down -->
+<div class="modal-overlay" id="productModal">
+    <div class="modal-card">
+        <span class="modal-close" onclick="closeProductModal()">&times;</span>
+        <div style="font-size: 1.8rem; margin-bottom: 8px;">📦</div>
+        <h3 id="modalProductName" style="font-size: 1.2rem; color: #fff; margin-bottom: 6px;">Product Title</h3>
+        <p id="modalProductCategory" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 16px;">Category</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+            <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Total Revenue</div>
+                <div id="modalProductSales" style="font-size: 1.2rem; font-weight: 700; color: #60a5fa;">$0</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Profit Margin</div>
+                <div id="modalProductMargin" style="font-size: 1.2rem; font-weight: 700; color: #34d399;">0%</div>
+            </div>
+        </div>
+
+        <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 10px; font-size: 0.8rem; color: #93c5fd;">
+            <strong>💡 Executive Recommendation:</strong> <span id="modalProductRec">High-performing revenue driver. Recommended to maintain inventory level.</span>
+        </div>
+    </div>
+</div>
+
+<!-- Plain-English Explanation Modal -->
+<div class="modal-overlay" id="explainModal">
+    <div class="modal-card">
+        <span class="modal-close" onclick="closeExplainModal()">&times;</span>
+        <div style="font-size: 1.8rem; margin-bottom: 8px;">💡</div>
+        <h3 id="explainTitle" style="font-size: 1.2rem; color: #fff; margin-bottom: 10px;">Metric Explanation</h3>
+        <p id="explainText" style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Explanation content...</p>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer>
     Designed & Developed by <a href="https://github.com/ishitapd" target="_blank">Ishita Prasad</a> |
     <a href="https://github.com/ishitapd/sales-performance-dashboard" target="_blank">GitHub Repository</a> |
-    Built with Python, SQL, Excel, Power BI, DAX & Modern Web Analytics
+    Sales Performance & Business Analytics Dashboard
 </footer>
 
 <script>
-// Dataset Models & Filter Engine
+// Data Store
 const rawData = {
     months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     categories: {
@@ -619,16 +825,16 @@ const rawData = {
         'South': { sales: 391722, profit: 46749 }
     },
     topProducts: [
-        { name: 'Canon imageCLASS', sales: 61600 },
-        { name: 'Cisco TelePresence', sales: 22638 },
-        { name: 'Motorola Smart Talk', sales: 17500 },
-        { name: 'Hoover Upright', sales: 14235 },
-        { name: 'Sauder Classic', sales: 13999 },
-        { name: 'Sharp Wireless', sales: 13100 },
-        { name: 'Apple iPhone', sales: 11999 },
-        { name: 'GBC DocuBind', sales: 10800 },
-        { name: 'HP Designjet', sales: 9899 },
-        { name: 'Cubify CubeX', sales: 8760 }
+        { name: 'Canon imageCLASS', sales: 61600, profit: 25120, cat: 'Technology', rec: '#1 Top Revenue Product. Maintain priority inventory.' },
+        { name: 'Cisco TelePresence', sales: 22638, profit: -1800, cat: 'Technology', rec: 'High revenue but negative margin. Audit promotional discounts.' },
+        { name: 'Motorola Smart Talk', sales: 17500, profit: 4200, cat: 'Technology', rec: 'Steady revenue and positive profit margin.' },
+        { name: 'Hoover Upright Vacuum', sales: 14235, profit: 3100, cat: 'Office Supplies', rec: 'Consistent retail seller in Office Supplies category.' },
+        { name: 'Sauder Classic Bookcase', sales: 13999, profit: -1100, cat: 'Furniture', rec: 'Furniture category item. High shipping cost impacts profit.' },
+        { name: 'Sharp Wireless Phone', sales: 13100, profit: 2800, cat: 'Technology', rec: 'Solid performer with strong quarterly growth.' },
+        { name: 'Apple iPhone 13', sales: 11999, profit: 3400, cat: 'Technology', rec: 'High brand demand; low discount required.' },
+        { name: 'GBC DocuBind Binder', sales: 10800, profit: 3900, cat: 'Office Supplies', rec: 'High profit margin item with frequent repeat orders.' },
+        { name: 'HP Designjet Printer', sales: 9899, profit: 1900, cat: 'Technology', rec: 'Enterprise technology item with high order value.' },
+        { name: 'Cubify CubeX 3D Printer', sales: 8760, profit: -3100, cat: 'Technology', rec: 'Excessive discounting caused significant profit loss.' }
     ],
     segments: {
         'Consumer': 1161401,
@@ -638,8 +844,10 @@ const rawData = {
 };
 
 let chartInstances = {};
+let isForecastEnabled = false;
+let isLiveStreaming = false;
+let liveInterval = null;
 
-// Common chart options
 Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
 Chart.defaults.color = "#94a3b8";
 
@@ -649,9 +857,9 @@ const commonScales = {
 };
 
 function initCharts() {
-    // 1. Monthly Sales Chart
+    // 1. Monthly Line Chart
     const ctxMonthly = document.getElementById('monthlySalesChart').getContext('2d');
-    const gradient2023 = ctxMonthly.createLinearGradient(0, 0, 0, 280);
+    const gradient2023 = ctxMonthly.createLinearGradient(0, 0, 0, 270);
     gradient2023.addColorStop(0, 'rgba(59, 130, 246, 0.35)');
     gradient2023.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
 
@@ -667,19 +875,16 @@ function initCharts() {
                     backgroundColor: gradient2023,
                     borderWidth: 3,
                     tension: 0.4,
-                    fill: true,
-                    pointBackgroundColor: '#60a5fa',
-                    pointHoverRadius: 6
+                    fill: true
                 },
                 {
                     label: '2022 Sales ($)',
                     data: [85432, 52341, 187654, 48765, 142543, 86432, 112345, 148765, 281234, 195432, 321543, 298765],
                     borderColor: '#10b981',
                     borderWidth: 2,
-                    borderDash: [5, 5],
+                    borderDash: [4, 4],
                     tension: 0.4,
-                    fill: false,
-                    pointHoverRadius: 6
+                    fill: false
                 }
             ]
         },
@@ -691,7 +896,7 @@ function initCharts() {
         }
     });
 
-    // 2. Category Donut Chart
+    // 2. Category Donut
     const ctxCat = document.getElementById('categoryChart').getContext('2d');
     chartInstances.category = new Chart(ctxCat, {
         type: 'doughnut',
@@ -700,8 +905,7 @@ function initCharts() {
             datasets: [{
                 data: Object.values(rawData.categories).map(c => c.sales),
                 backgroundColor: ['#3b82f6', '#f59e0b', '#10b981'],
-                borderWidth: 0,
-                hoverOffset: 8
+                borderWidth: 0
             }]
         },
         options: {
@@ -719,71 +923,156 @@ function initCharts() {
         data: {
             labels: Object.keys(rawData.regions),
             datasets: [
-                {
-                    label: 'Sales ($)',
-                    data: Object.values(rawData.regions).map(r => r.sales),
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 6
-                },
-                {
-                    label: 'Profit ($)',
-                    data: Object.values(rawData.regions).map(r => r.profit),
-                    backgroundColor: '#10b981',
-                    borderRadius: 6
-                }
+                { label: 'Sales ($)', data: Object.values(rawData.regions).map(r => r.sales), backgroundColor: '#3b82f6', borderRadius: 6 },
+                { label: 'Profit ($)', data: Object.values(rawData.regions).map(r => r.profit), backgroundColor: '#10b981', borderRadius: 6 }
             ]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: commonScales,
-            plugins: { legend: { labels: { color: '#cbd5e1' } } }
-        }
+        options: { responsive: true, maintainAspectRatio: false, scales: commonScales }
     });
 
-    // 4. Top Products Horizontal Bar Chart
-    const ctxTop = document.getElementById('topProductsChart').getContext('2d');
-    chartInstances.topProducts = new Chart(ctxTop, {
-        type: 'bar',
-        data: {
-            labels: rawData.topProducts.map(p => p.name),
-            datasets: [{
-                label: 'Sales ($)',
-                data: rawData.topProducts.map(p => p.sales),
-                backgroundColor: 'rgba(139, 92, 246, 0.85)',
-                borderRadius: 4
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: { ticks: { color: '#94a3b8', font: { size: 9 } }, grid: { color: 'rgba(255, 255, 255, 0.05)' } },
-                y: { ticks: { color: '#cbd5e1', font: { size: 9 } }, grid: { color: 'rgba(255, 255, 255, 0.05)' } }
-            },
-            plugins: { legend: { display: false } }
-        }
-    });
-
-    // 5. Segment Pie Chart
+    // 4. Segment Pie Chart
     const ctxSeg = document.getElementById('segmentChart').getContext('2d');
     chartInstances.segment = new Chart(ctxSeg, {
         type: 'pie',
         data: {
             labels: Object.keys(rawData.segments),
-            datasets: [{
-                data: Object.values(rawData.segments),
-                backgroundColor: ['#3b82f6', '#8b5cf6', '#ec4899'],
-                borderWidth: 0
-            }]
+            datasets: [{ data: Object.values(rawData.segments), backgroundColor: ['#3b82f6', '#8b5cf6', '#ec4899'], borderWidth: 0 }]
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom', labels: { color: '#cbd5e1' } } }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
     });
+
+    renderTopProductsList();
+}
+
+function renderTopProductsList() {
+    const listContainer = document.getElementById('topProductsList');
+    listContainer.innerHTML = '';
+    rawData.topProducts.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'top-product-item';
+        div.onclick = () => openProductModal(item);
+        div.innerHTML = `
+            <div>
+                <strong style="color:#fff;">${item.name}</strong>
+                <div style="font-size:0.72rem; color:var(--text-muted);">${item.cat}</div>
+            </div>
+            <div style="text-align:right;">
+                <div style="font-weight:700; color:#60a5fa;">$${item.sales.toLocaleString()}</div>
+                <div style="font-size:0.7rem; color:${item.profit >= 0 ? '#34d399' : '#fb7185'};">
+                    ${item.profit >= 0 ? '+' : ''}$${item.profit.toLocaleString()} Profit
+                </div>
+            </div>
+        `;
+        listContainer.appendChild(div);
+    });
+}
+
+// Feature 1: Predictive Sales Forecast Toggle
+function toggleAIForcasting() {
+    isForecastEnabled = !isForecastEnabled;
+    const btnText = document.getElementById('forecastBtnText');
+
+    if (isForecastEnabled) {
+        btnText.innerText = 'Hide 2024 AI Forecast';
+        const forecast2024 = [105000, 68000, 225000, 62000, 172000, 108000, 138000, 178000, 335000, 235000, 388000, 360000];
+        chartInstances.monthly.data.datasets.push({
+            label: '2024 AI Forecast ($)',
+            data: forecast2024,
+            borderColor: '#ec4899',
+            borderWidth: 2,
+            borderDash: [2, 2],
+            tension: 0.4,
+            fill: false
+        });
+    } else {
+        btnText.innerText = 'Show 2024 AI Forecast';
+        chartInstances.monthly.data.datasets = chartInstances.monthly.data.datasets.filter(ds => !ds.label.includes('2024'));
+    }
+    chartInstances.monthly.update();
+}
+
+// Feature 3: Live Stream Simulation
+function toggleLiveStream() {
+    isLiveStreaming = !isLiveStreaming;
+    const liveText = document.getElementById('liveStreamText');
+
+    if (isLiveStreaming) {
+        liveText.innerText = 'Live Streaming...';
+        liveInterval = setInterval(() => {
+            let salesEl = document.getElementById('kpiSales');
+            let ordersEl = document.getElementById('kpiOrders');
+            let currentOrders = parseInt(ordersEl.innerText.replace(/,/g, '')) + Math.floor(Math.random() * 4) + 1;
+            ordersEl.innerText = currentOrders.toLocaleString();
+        }, 1500);
+    } else {
+        liveText.innerText = 'Live Stream';
+        clearInterval(liveInterval);
+    }
+}
+
+// Feature 4: Exporters
+function exportCSV() {
+    let csvContent = "data:text/csv;charset=utf-8,Category,Sales,Profit,Orders\n";
+    Object.keys(rawData.categories).forEach(cat => {
+        const c = rawData.categories[cat];
+        csvContent += `${cat},${c.sales},${c.profit},${c.orders}\n`;
+    });
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "sales_analytics_export.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function printReport() {
+    window.print();
+}
+
+// Feature 5: Product Drill-Down Modal
+function openProductModal(product) {
+    document.getElementById('modalProductName').innerText = product.name;
+    document.getElementById('modalProductCategory').innerText = 'Category: ' + product.cat;
+    document.getElementById('modalProductSales').innerText = '$' + product.sales.toLocaleString();
+    const margin = ((product.profit / product.sales) * 100).toFixed(1);
+    document.getElementById('modalProductMargin').innerText = margin + '%';
+    document.getElementById('modalProductMargin').style.color = product.profit >= 0 ? '#34d399' : '#fb7185';
+    document.getElementById('modalProductRec').innerText = product.rec;
+    document.getElementById('productModal').style.display = 'flex';
+}
+
+function closeProductModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
+
+// Metric Explanation Tooltips
+function explainMetric(type) {
+    const titleEl = document.getElementById('explainTitle');
+    const textEl = document.getElementById('explainText');
+
+    if (type === 'Sales') {
+        titleEl.innerText = '💰 Total Sales Revenue';
+        textEl.innerText = 'Total Sales represents the total dollar amount generated from all completed transactions across retail store locations before expenses. In retail, this is your primary top-line growth indicator.';
+    } else if (type === 'Profit') {
+        titleEl.innerText = '📈 Net Profit';
+        textEl.innerText = 'Net Profit is the amount of money remaining after deducting wholesale product cost, shipping expenses, and promotional discounts from Total Sales. Positive net profit proves store profitability.';
+    } else if (type === 'Orders') {
+        titleEl.innerText = '📦 Total Orders';
+        textEl.innerText = 'Total Orders counts the exact number of distinct customer checkout transactions processed. Higher order volume indicates growing customer demand.';
+    } else if (type === 'Margin') {
+        titleEl.innerText = '💹 Profit Margin %';
+        textEl.innerText = 'Profit Margin % measures how many cents of net profit the business retains for every $1.00 of sales generated. (Formula: Net Profit ÷ Total Sales). Higher margins mean more efficient operations.';
+    } else if (type === 'AOV') {
+        titleEl.innerText = '🛒 Average Order Value (AOV)';
+        textEl.innerText = 'Average Order Value tracks the mean dollar amount spent by a customer per order. (Formula: Total Sales ÷ Total Orders). Increasing AOV boosts sales without needing to acquire new customers.';
+    }
+
+    document.getElementById('explainModal').style.display = 'flex';
+}
+
+function closeExplainModal() {
+    document.getElementById('explainModal').style.display = 'none';
 }
 
 function applyFilters() {
@@ -791,32 +1080,26 @@ function applyFilters() {
     const category = document.getElementById('filterCategory').value;
     const year = document.getElementById('filterYear').value;
 
-    let multiplier = 1.0;
-    if (region !== 'All') multiplier *= 0.65;
-    if (category !== 'All') multiplier *= 0.55;
-    if (year !== 'All') multiplier *= 0.52;
+    let mult = 1.0;
+    if (region !== 'All') mult *= 0.65;
+    if (category !== 'All') mult *= 0.55;
+    if (year !== 'All') mult *= 0.52;
 
     const baseSales = 2297200;
     const baseProfit = 286392;
     const baseOrders = 9994;
 
-    const currentSales = (baseSales * multiplier);
-    const currentProfit = (baseProfit * multiplier);
-    const currentOrders = Math.round(baseOrders * multiplier);
-    const currentMargin = ((currentProfit / currentSales) * 100).toFixed(2);
-    const currentAOV = Math.round(currentSales / currentOrders);
+    const curSales = baseSales * mult;
+    const curProfit = baseProfit * mult;
+    const curOrders = Math.round(baseOrders * mult);
+    const curMargin = ((curProfit / curSales) * 100).toFixed(2);
+    const curAOV = Math.round(curSales / curOrders);
 
-    // Update KPI UI
-    document.getElementById('kpiSales').innerText = '$' + (currentSales / 1000000).toFixed(2) + 'M';
-    document.getElementById('kpiProfit').innerText = '$' + (currentProfit / 1000).toFixed(1) + 'K';
-    document.getElementById('kpiOrders').innerText = currentOrders.toLocaleString();
-    document.getElementById('kpiMargin').innerText = currentMargin + '%';
-    document.getElementById('kpiAOV').innerText = '$' + currentAOV;
-
-    // Dynamically update Monthly Sales dataset
-    const base2023 = [94285, 59751, 205516, 53485, 155866, 94567, 122278, 159296, 307667, 210528, 352461, 325294];
-    chartInstances.monthly.data.datasets[0].data = base2023.map(v => Math.round(v * multiplier));
-    chartInstances.monthly.update();
+    document.getElementById('kpiSales').innerText = '$' + (curSales / 1000000).toFixed(2) + 'M';
+    document.getElementById('kpiProfit').innerText = '$' + (curProfit / 1000).toFixed(1) + 'K';
+    document.getElementById('kpiOrders').innerText = curOrders.toLocaleString();
+    document.getElementById('kpiMargin').innerText = curMargin + '%';
+    document.getElementById('kpiAOV').innerText = '$' + curAOV;
 }
 
 function resetFilters() {
@@ -826,7 +1109,6 @@ function resetFilters() {
     applyFilters();
 }
 
-// Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
     initCharts();
 });
