@@ -16,11 +16,32 @@
   <img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel"/>
   <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI"/>
   <img src="https://img.shields.io/badge/DAX-EC4899?style=for-the-badge&logo=analytics&logoColor=white" alt="DAX"/>
+  <img src="https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+</p>
+
+<p align="center">
+  <a href="https://sales-performance-dashboard-ten.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20Dashboard-brightgreen?style=for-the-badge" alt="Live Demo"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/ishitapd/sales-performance-dashboard">
+    <img src="https://img.shields.io/badge/GitHub-View%20Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
 </p>
 
 ---
 
-## 📸 Executive Dashboard Preview
+## 🚀 Live Demo
+
+> **The dashboard is deployed and accessible — no installation required.**
+>
+> 🌐 **[https://sales-performance-dashboard-ten.vercel.app/](https://sales-performance-dashboard-ten.vercel.app/)**
+>
+> Visit the link above to explore the fully interactive dashboard with real Indian retail data, live KPI cards, RFM customer segmentation, statistical trend forecasting, and INR/USD currency switching — directly in your browser.
+
+---
+
+## 📸 Dashboard Preview
 
 <p align="center">
   <img src="assets/dashboard_preview.png" alt="Sales Performance & Business Analytics Dashboard Preview" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"/>
@@ -28,11 +49,11 @@
 
 ---
 
-## 📌 Executive Summary
+## 📌 About This Project
 
-The **Sales Performance & Business Analytics Dashboard** is a comprehensive, production-grade data analytics portfolio case study developed by **Ishita Prasad**. This project solves real-world retail business problems by analyzing 50 transaction records (spanning Oct 2020 to Nov 2023) across Indian retail zones (**West, East, South, North**). 
+I built this **Sales Performance & Business Analytics Dashboard** as a complete, end-to-end data analytics case study. The goal was to demonstrate a realistic analyst workflow — starting from a raw CSV dataset, going through cleaning, SQL querying, data modeling, and finally delivering a business-ready interactive dashboard.
 
-The project delivers an end-to-end data pipeline combining **Python & Pandas** for data cleaning and exploratory data analysis (EDA), **SQL** for business querying and CTE window functions, **Power Query** for data modeling in a Star Schema, **DAX** for dynamic time-intelligence measures, and an interactive **Web & Power BI Executive Dashboard** featuring INR (₹) / USD ($) currency toggling, RFM customer segmentation, and statistical sales forecasting.
+The dataset covers 50 validated retail transactions (Oct 2020 – Nov 2023) from an Indian retail chain spanning four major zones: **West, East, South, and North**. I used Python & Pandas for data cleaning and EDA, SQL for business querying with CTEs and window functions, Power Query for ETL and Star Schema design, DAX for time-intelligence calculations, and built a fully interactive web dashboard featuring INR (₹) / USD ($) toggle, RFM customer segmentation, statistical moving average forecasting, CSV export, and PDF reporting.
 
 ---
 
@@ -258,14 +279,22 @@ sales-performance-dashboard/
 
 ---
 
-## 🌐 Live Demo & How to Reproduce
+## 🌐 How to Explore This Project
+
+### ✅ Option 1 — View Live (No Setup Required)
+The easiest way to see this dashboard is to visit the deployed Vercel link:
+
+> 🌐 **[https://sales-performance-dashboard-ten.vercel.app/](https://sales-performance-dashboard-ten.vercel.app/)**
+
+### 🛠️ Option 2 — Run Locally
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/ishitapd/sales-performance-dashboard.git
+   cd sales-performance-dashboard
    ```
 
-2. **Run Python Scripts:**
+2. **Run the Python analysis scripts:**
    ```bash
    cd python
    python 01_data_cleaning.py
@@ -273,20 +302,31 @@ sales-performance-dashboard/
    python 03_business_analysis.py
    ```
 
-3. **Run Web Dashboard Locally:**
+3. **Preview the web dashboard locally:**
    ```bash
    npx serve docs
    ```
-   Open `http://localhost:3000` or `http://localhost:59632` in your web browser.
+   Then open `http://localhost:3000` in your browser.
 
-4. **Enable GitHub Pages:**
-   - Repository Settings → Pages → Select `main` branch and `/docs` folder → Click Save.
-   - Live URL: `https://ishitapd.github.io/sales-performance-dashboard/`
+4. **Explore the SQL scripts** in the `sql/` folder — each file has comments explaining the business question it answers.
+
+5. **Read the Power BI documentation** in `powerbi/dax_measures.md` and `powerbi/dashboard_guide.md` to understand the data model and DAX measures I designed.
 
 ---
 
-## 👤 Author & Contact
+## 👤 About Me
 
 **Ishita Prasad**
-- 🌐 GitHub: [@ishitapd](https://github.com/ishitapd)
-- 💼 Role: Data Analyst & Business Intelligence Specialist
+
+I'm a Data Analyst with hands-on experience in business intelligence, data modeling, and Python-based analytics. This project represents my end-to-end analytical capability — from raw data wrangling to delivering a deployed, interactive dashboard that answers real business questions.
+
+- 🌐 **GitHub:** [@ishitapd](https://github.com/ishitapd)
+- 📊 **Live Project:** [sales-performance-dashboard-ten.vercel.app](https://sales-performance-dashboard-ten.vercel.app/)
+- 💼 **Skills:** Python · Pandas · SQL · Power BI · DAX · Excel · Data Visualization · Business Analytics
+
+---
+
+<p align="center">
+  <em>Built with real data. Designed for business decisions. Deployed for the world to see.</em><br/>
+  <strong>⭐ If you found this useful, consider starring the repository!</strong>
+</p>
